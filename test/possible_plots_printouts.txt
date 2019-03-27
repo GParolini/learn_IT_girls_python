@@ -1,0 +1,18 @@
+Plots
+- Histogram of publications/year (done)
+- Pie chart of the publications/languages (done)
+- Paired plots (author-language; author-journal)
+- Select 2-3 of the journals with the highest number of articles and test the distribution per year and per author of these articles
+- Plot co-authorship
+
+
+
+
+Printouts
+- Alphabetical list of first authors (done)
+- Alphabetical list of publication titles (done)
+- Count of publications per language (done)
+- Count of empty values per column (done)
+- Count of publications per item type (book, journal article, report, etc.) and for the journals count of articles published over the years
+- Count of publications per author (including co-authored publications)
+- Cross-reference between authors and publication languages

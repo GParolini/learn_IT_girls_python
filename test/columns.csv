@@ -1,0 +1,87 @@
+Key,object
+Item Type,object
+Publication Year,float64
+Author,object
+Title,object
+Publication Title,object
+ISBN,object
+ISSN,object
+DOI,object
+Url,object
+Abstract Note,object
+Date,object
+Date Added,object
+Date Modified,object
+Access Date,object
+Pages,object
+Num Pages,object
+Issue,object
+Volume,object
+Number Of Volumes,float64
+Journal Abbreviation,object
+Short Title,object
+Series,object
+Series Number,object
+Series Text,float64
+Series Title,object
+Publisher,object
+Place,object
+Language,object
+Rights,object
+Type,object
+Archive,object
+Archive Location,float64
+Library Catalog,object
+Call Number,object
+Extra,object
+Notes,float64
+File Attachments,float64
+Link Attachments,float64
+Manual Tags,object
+Automatic Tags,float64
+Editor,object
+Series Editor,float64
+Translator,float64
+Contributor,float64
+Attorney Agent,float64
+Book Author,float64
+Cast Member,float64
+Commenter,float64
+Composer,float64
+Cosponsor,float64
+Counsel,float64
+Interviewer,float64
+Producer,float64
+Recipient,float64
+Reviewed Author,object
+Scriptwriter,float64
+Words By,float64
+Guest,float64
+Number,object
+Edition,object
+Running Time,float64
+Scale,float64
+Medium,float64
+Artwork Size,float64
+Filing Date,float64
+Application Number,float64
+Assignee,float64
+Issuing Authority,float64
+Country,float64
+Meeting Name,float64
+Conference Name,float64
+Court,float64
+References,float64
+Reporter,float64
+Legal Status,float64
+Priority Numbers,float64
+Programming Language,float64
+Version,float64
+System,float64
+Code,float64
+Code Number,float64
+Section,float64
+Session,float64
+Committee,float64
+History,float64
+Legislative Body,float64
