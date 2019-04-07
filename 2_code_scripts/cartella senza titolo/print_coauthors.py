@@ -35,12 +35,12 @@ def printCoauthors(my_list):
             print(element) 
         else:
             continue
-    return
+    
 
 def search_nested(mylist, val):
     for i in range(len(mylist)):
         for j in range(len(mylist[i])):
-            #print i,j
+            print i,j
             if mylist[i][j] == val:
                 return mylist[i]
     return str(val) + ' not found'

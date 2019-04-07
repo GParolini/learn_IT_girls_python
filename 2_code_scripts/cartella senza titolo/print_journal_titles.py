@@ -10,7 +10,9 @@ import pandas as pd
 import os
 
 #read data
-df = pd.read_csv(os.path.join("..","..", "1_data", "cleandata.csv"))
+df = pd.read_csv(os.path.join("..","..", "1_data", "bibliography_data.csv"))
+
+
 
 #list itemtypes labels in the data
 item_types =list(set(df["Item Type"]))
@@ -26,6 +28,6 @@ journal_titles_unique = list(set(journal_titles))
 journal_titles_unique.sort()
 
 
-with open(os.path.join("..","..", "3_printouts", "journal_titles.txt"), 'w') as outfile:
+with open("journal_titles.txt", 'w') as outfile:
     for title in journal_titles_unique:
         print(title, file=outfile)

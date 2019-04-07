@@ -6,15 +6,18 @@ Created on Mon Mar 25 23:37:36 2019
 @author: giudittaparolini
 """
 
-import pandas as pd
-import os
 
-df = pd.read_csv(os.path.join("..","..", "1_data", "bibliography_data.csv"))
+#1 STRIP BLANK SPACES FROM ALL COLUMNS OF A DATAFRAME
+def StripAllCols(df): 
+    df.columns = df.columns.str.strip()
 
-print()
+#2 STRIP BLANK SPACES FROM A SPECIFIC COLUMN OF A DATAFRAME
+def StripCol(df,column): 
+    df[column] = df[column].str.strip()
 
-#remove empty spaces at the beginning/end of column headers [the code gave an error otherwise]
-df.columns = df.columns.str.strip()
+
+
+#3 PRINT TO FILE
 
 #remove all the columns where more than 97 per cent of the cells are empty
 df_clean1 = df.drop(df.loc[:,list((100*(df.isnull().sum()/len(df.index))>97))].columns, 1)
@@ -32,3 +35,33 @@ df_clean["Publication Year"] = (
 
 #print the resulting dataframe in a csv file
 df_clean.to_csv(os.path.join("..","..", "1_data", "cleandata.csv"), mode="a")
+
+
+#ITEMTYPE
+import pandas as pd
+import os
+
+#read data
+df = pd.read_csv(os.path.join("..","..", "1_data", "cleandata.csv"))
+
+#list itemtypes labels in the data
+item_types =list(set(df["Item Type"]))
+
+df[(df[Item_type] = itemtype)]
+print(item_types)
+
+
+
+
+journal_articles = df.loc[df['Item Type'] == 'journalArticle']
+
+journal_titles = journal_articles["Publication Title"].dropna()
+
+journal_titles_unique = list(set(journal_titles))
+
+journal_titles_unique.sort()
+
+
+with open(os.path.join("..","..", "3_printouts", "journal_titles.txt"), 'w') as outfile:
+    for title in journal_titles_unique:
+        print(title, file=outfile)
