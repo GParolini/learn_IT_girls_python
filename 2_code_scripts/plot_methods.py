@@ -18,13 +18,13 @@ def hist_pub_year(df):
     plt.xlabel("Publication Year",fontsize=15)
     plt.ylabel("Frequency",fontsize=15)
     
-#Plot the histogram for the publications' languages
+#Plot the histogram of the publications' languages
 def count_plot_lang(df):
      sns.set(style="darkgrid")
      sns.set(rc={"figure.figsize":(25,14)})
      sns.countplot(y="Language", data=df)
 
-#Plot pie chart for the publications' languages
+#Plot pie chart of the publications' languages
 def pie_lang():
     my_list = ut.agg_list()
     languages = dict(my_list).keys()
@@ -37,23 +37,3 @@ def pie_lang():
     plt.title("Publications distributed according to language")
     plt.legend(loc="best", labels=languages )
     plt.axis('equal')
-
-
-
-
-
-
-
-#PLOT PAIRS
-
-
-
-
-
-#PLOT PAIRS
-
-#import seaborn as sns
-#import os
-
-#read data
-#df = sns.load_dataset(os.path.join("..","..", "1_data","cleandata.csv"))

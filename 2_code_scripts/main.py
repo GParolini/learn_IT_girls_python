@@ -30,19 +30,68 @@ df3 = dm.colval_to_int(df2, "Publication Year")
 #Print the cleaned data in a csv
 ut.print_csv_data(df3, "cleandata.csv")
 
-#Plot the histogram of the languages and save it in 4_plots
-fig1 = pl.count_plot_lang(df)
-ut.print_plot(fig1, "plot_publ_language.png")
+#Generate a list of the item types and print it in a txt file
+item_types =list(set(df["Item Type"]))
+ut.print_txt_printouts (item_types, "item_types.txt")
+
+#Generate the item type count csv file
+lc = pr.itemtype_counts(df)
+ut.print_csv_printouts (lc, "itemtype_counts.csv")
+
+#Generate a list of the report titles and print them in a txt file
+report_titles = pr.print_report_titles(df)
+ut.print_txt_printouts (report_titles, "report_titles.txt")
+
+#Generate a list of the thesis titles and print them in a txt file
+thesis_titles = pr.print_thesis_titles(df)
+ut.print_txt_printouts (thesis_titles, "thesis_titles.txt")
+
+#Generate a list of the book titles and print them in a txt file
+book_titles = pr.print_book_titles(df)
+ut.print_txt_printouts (book_titles, "book_titles.txt")
+
+#Generate a list of the journal titles and print them in a txt file
+journal_titles = pr.print_journal_titles(df)
+ut.print_txt_printouts (journal_titles, "journal_titles.txt")
+
+#Generate a list of the magazine titles and print them in a txt file
+magazine_titles = pr.print_magazine_titles(df)
+ut.print_txt_printouts (magazine_titles, "magazine_titles.txt")
+
+#Generate a list of the newspaper titles and print them in a txt file
+newspaper_titles = pr.print_newspaper_titles(df)
+ut.print_txt_printouts (newspaper_titles, "newspaper_titles.txt")
+
+#Generate a list of the first authors and print them in a txt file
+first_authors = pr.print_first_authors(df)
+ut.print_txt_printouts (first_authors, "first_authors.txt")
+
+#Generate the author count csv file
+lc = pr.author_counts(df)
+ut.print_csv_printouts (lc, "author_counts.csv")
+
+#Generate a list of all the authors and print them in a txt file
+all_authors = pr.print_all_authors(df)
+ut.print_txt_printouts (all_authors, "all_authors.txt")
+
+#Generate a list of the co-authors and print them in a txt file
+first_authors = list(pr.print_first_authors(df))
+co_authors = pr.print_coauthors(first_authors)
+ut.print_txt_printouts (co_authors, "co_authors.txt")
 
 #Plot the histogram of the publications per year and save it in 4_plots
 fig2 = pl.hist_pub_year(df)
 ut.print_plot(fig2, "plot_publ_year.png")
 
-#Generate the language count txt file
+#Plot the histogram of the languages and save it in 4_plots
+fig1 = pl.count_plot_lang(df)
+ut.print_plot(fig1, "plot_publ_language.png")
+
+#Generate the language count csv file
 lc = pr.lang_counts(df)
 ut.print_csv_printouts (lc, "lang_counts.csv")
 
-#Generate the pie chart of the language counts using the data in the txt file
+#Generate the pie chart of the language counts using the data in the csv file
 fig3 = pl.pie_lang()
 ut.print_plot(fig3, "plot_pie_languages.png")
 

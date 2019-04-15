@@ -1,0 +1,7 @@
+report
+bookSection
+book
+magazineArticle
+thesis
+journalArticle
+newspaperArticle
