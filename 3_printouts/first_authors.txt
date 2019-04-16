@@ -1,6 +1,6 @@
 A. S.
 Aamodt, O. S.
-Aamodt, O.S.; Platt, A.W.
+Aamodt, O. S.; Platt, A.W.
 Abbe, C.
 Abbot, C. G.
 Abe, T.
@@ -143,13 +143,12 @@ Bastamov, S. L.
 Bastumoff, S.
 Bates, C. G.
 Bates, C. G.; Roeser, J.
-Bates, C. G.; Roeser, J., Junior
 Batmanov, V. A.
 Baumann, E.
 Baur, F.
 Bayfield, E. G.
 Beach, F. H.
-Beach, S. A.; Allen, F. W., Junior
+Beach, S. A.; Allen, F. W.
 Beal, J. A.
 Beall, H. W.
 Bean, L. H.
@@ -261,7 +260,6 @@ Bouget, J.; De Virville, A. D.
 Bourne, B. A.
 Boutaric, A.
 Bouygues, H.
-Bouyoucos, G.
 Bouyoucos, G. J.
 Bouyoucos, G. J.; McCool, M. M.
 Bovie, W. T.
@@ -477,7 +475,7 @@ Coupin, H.
 Coville, F. V.
 Coward, K. H.
 Cox, H. J.
-Crabb, G. A., Jr.
+Crabb, G. A.
 Cragoe, E. J.
 Craig, J.
 Craigie, J. H.
@@ -723,7 +721,7 @@ Flint, L. H.; McCaluter, E. D.
 Flint, L. H.; Moreland, C. F.
 Flora, S. D.
 Flory, E. L.
-Flory, W. S., Jr.; Walker, J. C.
+Flory, W. S.; Walker, J. C.
 Flynn, W. A.
 Flyorov, K. V.
 Foester, H. C.; Tincker, M. A. H.; Vasey, A. J.; Wadham, S. M.
@@ -1348,7 +1346,7 @@ Lundegårdh, H.
 Lunelund, H.
 Lunt, H. A.
 Luterstein, I. G.; Skvorcov, A. A.
-Lutz, H. J.; Chandler, R. F., Junior
+Lutz, H. J.; Chandler, R. F.
 Lyon, C. J.
 Lysenko, T. D.
 Löwy, A.
@@ -1462,7 +1460,7 @@ Mildbraed, J.
 Milewski, M.
 Miliani, R.
 Miller, D. H.
-Miller, E. H., Jr.
+Miller, E. H.
 Miller, E. S.; Burr, G. O.
 Miller, J. C.
 Miller, J. M.

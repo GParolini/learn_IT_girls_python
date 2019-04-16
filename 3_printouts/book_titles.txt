@@ -26,6 +26,7 @@ Annuaire de l'institut de Physique du Globe
 Atlas of American agriculture
 Atlas of climatic types in the United States, 1900–1939
 Atlas-aklimi le-Erets-Yisrael u-sheknenoteha [Bioclimatic atlas of Israel]
+Atti del I. Congresso Internazionale di Panificazione
 Bedeutung exakter Klimawerte in der Standortslehre
 Berichte der mathematisch–physischen Klasse der Sächsischen Akademie der Wissenschaften zu Leipzig
 Beziehungen zwischen den Schwankungen des Klimas und der Produktion in Australien [Relations between climatic variations and production in Australia]
@@ -43,6 +44,7 @@ Climatological normals for Egypt and the Sudan, Cyprus and Palestine
 Climats, Forêts et désertification de'l Afrique tropicale [Climates, forests and desertification of tropical Africa]
 Commission de Météorologie agricole, Procés-verbaux
 Comparison of climate of the United States and Europe with special attention to Poland and her Baltic coast
+Compte-Rendu des travaux du congrès de la défense sanitaire des végétaux (Paris, 21-24 janvier 1934)
 Conference of Empire Meteorologists, 1929, Agricultural Section. II. Papers and Discussions
 Cooperative agricultural technique
 Cosmic radiation and its biological effects
@@ -169,16 +171,21 @@ Preliminary observations on growth and phototropic response of oat seedlings
 Principes théoriques de l'acclimatisation
 Principles of agrobiology. Or, the laws of plant growth in relations to crop production
 Prirodnye usloviiā Severo-Kavkazskogo Kraiā i organizatsiiā krest'iānskogo khoziāistva [Natural conditions of North-Caucasus Region and organization of the farmer's economy]
+Proceedings of the 5th Pacific Science Congress (Canada) 1933
 Proceedings of the 6th Pacific Science Congress of the Pacific Science Association (Berkeley, California)
 Proceedings of the 7th annual Meeting of the American Farm Economic Association
+Proceedings of the All-Russian Congress of Botany
 Proceedings of the All-Russian Congress on Botany Leningrad
+Proceedings of the International congress of plant sciences, 1st Congress, Ithaca, New York, August 16-23, 1926
 Programme – instruction pour les observations phénologiques
 Protection of forests and agricultural crops against wind
 Protokolle der Tagung in Danzig 28–31 August 1935 [Transactions of the session at Danzig August 28–31, 1935]
 Prévision du rendement du blé d'apres les éléments météorologiques [Survey of the wheat yields in connection with meteorological factors]
 Prévision du rendement du blé d'après éléments météorologiques [Forecasting the yield of wheat according to meteorological conditions]
 Relations between the meteorological character of the seasons and the yields of wheat in the north-western quarter of France
+Report and Proceedings of the 9th International Horticultural Congress in London
 Report of the Agricultural Meteorological Conference in London
+Report of the Hawaii Agricultural Experiment Station 1944
 Reports of the Conference on Agricultural Meteorology  in London 1930
 Reports of the Conference on Agricultural Meteorology in London
 Reports of the Conference on Agricultural Meteorology in London 1930
@@ -222,7 +229,7 @@ The plant in relation to water
 The production of tobacco
 The relation between sugar crops and weather
 The soil: its nature, relations, and fundamental principles of management
-The temper­ature of the soil in Athens
+The temperature of the soil in Athens
 The theoretical basis of vernalisation
 Till kännedomen om klimatet i skogen och andra växtsamhällen (De la connaissance du climat des forêts et d'autres associations végétales)
 Tobacco substation at Windsor: report for 1935

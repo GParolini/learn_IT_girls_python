@@ -1,5 +1,3 @@
-"Unser Land", Landw. Beilage
-1944 Reports of the Hawaii Agricultural Experiment Station
 Acoreana
 Acta Agralia Fennica
 Acta Jutlandica
@@ -8,7 +6,6 @@ Acta Phaenologicae
 Acta Societatis Botanicorum Poloniae
 Actes de la Société linnéenne de Bordeaux
 Actes et Comptes Rendus de l’Association Colonies-Sciences
-Agr. Eng.
 Agrario levantino
 Agricoltura coloniale
 Agricultura Sinica
@@ -24,8 +21,8 @@ American Journal of Physiology
 American Journal of Science
 American Midland Naturalist
 American Naturalist
-American Nature
 American Potato Journal
+American Review of Reviews
 American Society for Horticultural Science Proceedings
 Anales Científicos Paraguayos
 Ann. fac. agr.
@@ -35,18 +32,18 @@ Annalen der Meteorologie
 Annales agronomiques
 Annales de Gembloux
 Annales de Géographie
+Annales de l'Ecole National d'Agriculture
 Annales de l'Institut National de la recherche agronomique
 Annales de l'Institut Pasteur
 Annales des Services techniques d'hygiène de la Ville de Paris
 Annales des epiphyties, publiées par l'Institut de recherches agronomiques
 Annales des sciences naturelles – Botanique
 Annali del Regio Instituto Superiore Agrario di Portici
-Annali di Sperimentazione Agraria [Rome]
+Annali di Sperimentazione Agraria (Rome)
 Annali di botanica
 Annali di chimica applicata (Rome)
 Annali di geofisica (Rome)
 Annali di tecnica agraria
-Annals de l'Ecole National Agriculture
 Annals of Applied Biology
 Annals of Botany
 Annals of the Agricultural Experiment Station of Suigen (Chosen)
@@ -64,16 +61,13 @@ Archiv für Mikrobiologie
 Archiv für Pflanzenbau
 Archiv für Tierernährung und Tierzucht
 Archivio di scienze biologiche (Bologna)
-Atti R. Accad. georogof., geograf.
-Atti del I. Congresso Internazionale di Panificazione
 Australian Geographer
 Australian Journal of Scientific Research
 Az Idöjárás [The Weather]
-Bayrische Ackerbauzeitung
+Bayerische Ackerbauzeitung
 Berichte der Schweizerischen Botanischen Gesellschaft
 Berichte der deutschen Botanischen Gesellschaft
 Berichte des deutschen Wetterdienstes in der US-Zone
-Berichte des Ōhara Instituts für landwirtschaftliche Forschung
 Berichte des Ōhara Instituts für landwirtschaftliche Forschungen
 Berichte über Landwirtschaft
 Better Crops with Plant Food
@@ -85,17 +79,14 @@ Bioklimatische Beiblätter der Meteorologischen Zeitschrift
 Biologia generalis
 Biological Bulletin
 Biological Reviews
-Biological reviews of the Cambridge Philosophical Society
 Biologisches Centralblatt
 Biull. Iaroviz.
-Black Rock Forest Papers
 Blatt für Zuckerrübenbau
 Bodenkundliche Forschungen
-Bol. I.N.I.A. (Madrid)
-Bol. inst. invest. agron. (Madrid)
 Boletín del Instituto Nacional de Investigaciones y Experiencias Agronomícas y Forestales
+Bollettino del Regio Istituto Superiore Agrario di Pisa
 Bollettino della Società Italiana di Biologia Sperimentale
-Bollettino della Società dei naturalisti in Napoli
+Bollettino della Società dei Naturalisti in Napoli
 Botanical Gazette
 Botanical Review
 Botanisches Archiv
@@ -106,9 +97,7 @@ British Solomon Islands Protectorate Agricultural Gazette
 British Sugar Beet Review
 Bryologist
 Bul. G.F.J. C.C.O. Voronez
-Bull. R. Istit. Sup. Agric. Pisa
 Bulletin Agricole du Congo Belge
-Bulletin Association inter. Select. Pl.
 Bulletin de l'Association Internationale des Sélectionneurs de Plantes
 Bulletin de l'Association de géographes français
 Bulletin de l'Institut agronomique de Gembloux
@@ -117,7 +106,7 @@ Bulletin de la Commission météorologique de Seine-et-Oise
 Bulletin de la Société Centrale d'Horticulture de Nancy
 Bulletin de la Société Dendrologique de France
 Bulletin de la Société botanique de France
-Bulletin de la Société d'ecouragement pour l'Industrie nationale
+Bulletin de la Société d'encouragement pour l'Industrie nationale
 Bulletin de la Société des Sciences naturelles de Seine-et-Oise
 Bulletin de la Société languedocienne de Géographie
 Bulletin de la Société nationale d'acclimatation de France
@@ -142,8 +131,8 @@ Bulletin of the Illinois Agricultural Experiment Station
 Bulletin of the Illinois Natural History Survey
 Bulletin of the Institute for Experimental Agriculture in Georgia
 Bulletin of the Miyazaki College of Agriculture and Forestry
-Bulletin of the N.Y. Botanical Garden
 Bulletin of the New Jersey Agricultural Experiment Station
+Bulletin of the New York Botanical Garden
 Bulletin of the New Zealand Department of Scientific and Industrial Research
 Bulletin of the Ohio Biological Survey
 Bulletin of the Panhandle Agricultural Experiment Station
@@ -155,9 +144,8 @@ California Citrograph
 Canadian Geographical Journal
 Canadian Journal of Research
 Canadian Journal of Research (Section C)
-Canadian Mining and Metallurgical Bulletin
 Centralblatt für das gesamte Forstwesen
-Ceylon Journal of Science: Section E, Meteorology
+Ceylon Journal of Science (Section E, Meteorology)
 Chemie der Erde
 Chibinsk. apatit.
 Chimiz. soc. Zemled
@@ -172,14 +160,9 @@ Comptes rendus de la 1c Commission de l'Association Internationale de la Science
 Comptes rendus de la Société biogéographique
 Comptes rendus des séances de l'Académie d'agriculture de France
 Comptes rendus des séances de la Société de Biologie et de ses filiales associées
-Comptes rendus du Congrès des Sociétés savantes de Paris et des Déparements, tenu à Toulouse en 1933
-Comptes rendus du Congrès des Sociétés savantes de Paris et des Départements, tenu à Toulouse en 1933. Section des Sciences
-Comptes rendus du Congrés des Sociétés savantes de Paris et des Départements, tenu à Toulouse en 1933
+Comptes rendus du congrès des sociétés savantes de Paris et des départements (Section des Sciences)
 Comptes rendus hebdomadaires des séances de l'Académie d'Agriculture de France
-Comptes rendus hebdomadaires des séances de l'Académie d'agriculture de France
-Comptes rendus hebdomadaires des séances de l'Académie des sciences
-Comptes rendus hebdomadaires des séances de l'Académie des sciences (Paris)
-Congrès de la Défense sanitaire de végétaux. Compte-Rendu des travaux du congrès de la défense sanitaire des végétaux
+Comptes rendus hebdomadaires des séances de l'Académie des Sciences (Paris)
 Contr. Agric. Met.
 Contributions from Boyce Thompson Institute
 Courrier de l'I.M.C.
@@ -196,8 +179,6 @@ Der Balneologe
 Der Kartoffelbau
 Der Kulturtechniker
 Der Züchter
-Der Züchter: Zeitschrift für theoretische und angewandte Genetik
-Detskosl'skaia akhlimatizatsionnaia Sta.
 Detskosl'skaia akhlimatizatsionnaia Sta. [Labours of the Acclimation Station]
 Deutsche Forschung
 Deutsche Landwirtschaftliche Presse
@@ -220,7 +201,6 @@ Elektrif. Sel. Choz.
 Empire Forestry Journal
 Empire Journal of Experimental Agriculture
 Engineering News
-Eos, Transactions American Geophysical Union
 Eos, Transactions, American Geophysical Union
 Erde und Wirtschaft
 Experiment Station Record
@@ -236,7 +216,6 @@ Farm Research
 Farming in South Africa
 Fennia
 Fermentforschung
-Flora (Jena)
 Flora oder Allgemeine Botanische Zeitung
 Florida State Horticultural Society Proceedings
 Florists' Exchange and Horticultural Trade World
@@ -247,11 +226,10 @@ Forschungsdienst
 Forstwissenschaftliches Centralblatt
 Fortschritte der Landwirtschaft
 Front nauk. i technik
-Fruittelt
+Fruitteelt
 Frühlings landwirtschaftliche Zeitung
 Gartenschönheit
 Gas Age
-Gaz. Obserw. PIHM
 Gaz. Obserwatora Państwowego Inst. Hydrol.-Meteorol.
 Geofisica pura e applicata
 Geografiska Annaler
@@ -269,8 +247,9 @@ Hawaiian Planters' Record
 Heating and Ventilating
 Heating, Piping, and Air Conditioning
 Hilgardia
-Historia Natura
-I.V.A.
+Historia Naturalis
+I Georgofili: Atti della Regia Accademia dei Georgofili
+I.V.A. (The Royal Swedish Academy of Engineering Sciences)
 ISIS (Dresden)
 Illinois Horticulture
 Illustrierte landwirtschaftliche Zeitung
@@ -308,7 +287,6 @@ Jahrbücher für wissenschaftliche Botanik
 Japanese Journal of Botany
 Journal d'Agriculture Belgique
 Journal d'Agriculture pratique
-Journal d'Agriculture pratique (Paris)
 Journal d'agriculture traditionnelle et de botanique appliquée
 Journal forestier suisse
 Journal für Landwirtschaft
@@ -327,10 +305,10 @@ Journal of Farm Economics
 Journal of Forestry
 Journal of General Physiology
 Journal of Geography
-Journal of Geography Tokyo
+Journal of Geography (Tokyo)
 Journal of Heredity
 Journal of Indian Botanical Society
-Journal of Meteorological Research Tokyo
+Journal of Meteorological Research (Tokyo)
 Journal of Meteorology
 Journal of Physical Chemistry
 Journal of Pomology and Horticultural Science
@@ -346,20 +324,17 @@ Journal of the Chinese Geophysical Society
 Journal of the College of Agriculture, Imperial University of Tokyo
 Journal of the College of Science, Imperial University of Tokyo
 Journal of the Colorado-Wyoming Academy of Science
-Journal of the Council of Scientific and Industrial Researc
 Journal of the Council of Scientific and Industrial Research
-Journal of the Department of Agriculture, Dublin
+Journal of the Department of Agriculture (Dublin)
+Journal of the Department of Agriculture (South Australia)
+Journal of the Department of Agriculture (West Australia)
 Journal of the Department of Agriculture, Kyushu Imperial University
-Journal of the Department of Agriculture, South Australia
-Journal of the Department of Agriculture, Victoria
-Journal of the Department of Agriculture, West Australia
 Journal of the Elisha Mitchell Scientific Society
 Journal of the Imperial Agricultural Experiment Station Tokio
 Journal of the Indian Botanical Society
 Journal of the Indian Chemical Society
 Journal of the Indian Society of Agricultural Statistics
 Journal of the Maryland Academy of Science
-Journal of the Meteorological Society of Japan
 Journal of the Meteorological Society of Japan (Kishō Shūchi)
 Journal of the Ministry of Agriculture
 Journal of the New York Botanical Garden
@@ -370,7 +345,7 @@ Journal of the Royal Horticultural Society
 Journal of the Royal Society of Western Australia
 Journal of the Scottish Meteorological Society
 Journal of the Society of Tropical Agriculture
-Journal of the South-Eastern Agricultural College, Wye
+Journal of the South-Eastern Agricultural College (Wye)
 Journal of the Tennessee Academy of Science
 Journal of the Washington Academy of Sciences
 Journeés d'Agronomie Coloniale
@@ -384,6 +359,7 @@ Kosmos
 Kühn-Archiv
 L'Astronomie
 L'Italia agricola
+L'Olivicoltore
 L'agriculture pratique des pays chauds
 La Génie rural
 La Météorologie
@@ -393,6 +369,7 @@ La Revue du Ciel
 La Vie agricole et rurale
 Landbouwkundig Tijdschrift [Agricultural Journal]
 Landeskultur
+Landwirtschaftliche Beilage
 Landwirtschaftliche Jahrbücher
 Landwirtschaftliche Jahrbücher für das Deutsche Reich
 Landwirtschaftliche Wochenschrift der Landesbauernschaft für die Provinz Sachsen und Anhalt
@@ -400,7 +377,7 @@ Landwirtschaftliche Wochenschrift der Landwirtschaftskammer für die Provinz Sac
 Landwirtschaftliche Wochenschrift für die Provinz Sachsen
 Landwirtschaftlicher Kalender der Hallischen Nachrichten
 Landwirtschaftliches Jahrbuch der Schweiz
-Lavori Botan.
+Lavori di botanica
 Le Bulletin agricole
 Le Génie rural
 Le Progrès agricole et viticole
@@ -418,13 +395,11 @@ Mat. etude calam Geneve.
 Mat. k. izuc. estestv.-proizv. sil. Zapadn. Obl.
 Materialy do Fizjografii Kraju, Polska Akad. Umiejetności
 Medd. Norske Skogsforsoksv.
-Medd. fr. Statens Met.-Hydr. Anst.
+Meddelanden från Statens Meteorologisk-Hydrografiska Anstalt
 Meddelanden från Statens Skogsförsöksanstalt [Reports of the Swedish Institute of Experimental Forestry]
-Meddelanden från Statens meteorologisk-hydrografiska anstalt
 Mededeelingen, Directeur van de Tuinbouw
 Medizin-Meteorologische Hefte
 Meldinger Norges Landbrukshøgskole [Reports of the Norwegian Agricultural University]
-Meldinger fra Norges Landbrukshøgskole [Scientific Reports from the Agricultural College of Norway]
 Memoirs and proceedings of the Manchester Literary & Philosophical Society
 Memoirs of the Brooklyn Botanical Garden
 Memoirs of the Department of Agriculture in India
@@ -433,13 +408,12 @@ Memoirs of the Imperial Marine Observatory (Kobe)
 Memoirs of the Royal Meteorological Society
 Met. Gen. Bot.
 Met. Vestnik
-Meteorol. Gidrologiiā
-Meteorol. i Gidrol.
-Meteorol. zpràvy
 Meteorologia pratica
 Meteorological Journal
 Meteorological Magazine
 Meteorological Magazine (Nanking)
+Meteorologické zpràvy
+Meteorologiia i Gidrologiia [Meteorology and Hydrology]
 Meteorologische Rundschau
 Meteorologische Zeitschrift
 Michigan Agricultural Experiment Station Quarterly Bulletin
@@ -475,7 +449,6 @@ Nature
 Nature Magazine
 Naturen (Bergen)
 Naturforschende Gesellschaft (Basel)
-Naturwissenschaften
 Nauchno-agronomicheskii Zhurnal [Journal für landwirtschaftliche Wissenschaft]
 Nebraska University Studies
 Neuheiten auf dem Gebiete des Pflanzenschutzes
@@ -483,10 +456,9 @@ New Jersey Agricultural Experiment Station Bulletin
 New Phytologist
 New Zealand Journal of Agriculture
 New Zealand Journal of Science and Technology
-New Zealand Journal of Science and Technology, Section A
+New Zealand Journal of Science and Technology A
 Nordisk jordbrugsforskning [Nordic agricultural research]
 Norsk Landmannsblad
-Norsk landmannsblad
 Northwest Science
 Northwestern Miller and American Baker
 Notas preliminares del Museo de La Plata
@@ -498,7 +470,6 @@ Nuovo giornale botanico italiano
 O.M.I. Pub.
 Ohio Agricultural Station Bimonthly Bulletin
 Ohio Journal of Science
-Oltivicoltore
 Opyt i issledov. Vsesojuzn. Lesokult. i. Agrolesmoeliorat. Inst.
 Ovcevdstvo
 Pakistan Geographical Review
@@ -520,7 +491,6 @@ Phytopathologische Zeitschrift
 Phytopathology
 Pionier
 Plant Physiology
-Plant World
 Planta
 Plodovoscn. Choz.
 Pochvovedenie
@@ -534,13 +504,7 @@ Priloz. k dekadn. bull. Uralsk. G.M.K.
 Priroda [Nature]
 Problemy
 Problemy Fiz. Geograf.
-Proceedings of The Indian Academy of Sciences
-Proceedings of The Indian Academy of Sciences - Section A
-Proceedings of The Indian Academy of Sciences – Section B
-Proceedings of The Indian Academy of Sciences. Section B
-Proceedings of the 5th Pacific Science Congress (Canada) 1933
 Proceedings of the Academy of Natural Sciences of Philadelphia
-Proceedings of the All-Russian Congress of Botany
 Proceedings of the American Society for Horticultural Science
 Proceedings of the Annual Meeting of the Highway Research Board
 Proceedings of the Annual Meeting of the Western Canadian Society of Agronomy
@@ -548,14 +512,13 @@ Proceedings of the Boyce Thompson Institute
 Proceedings of the Crop Science Society of Japan
 Proceedings of the Florida State Horticultural Society
 Proceedings of the Imperial Academy (Tokyo)
-Proceedings of the Imperial Academy Tokyo
-Proceedings of the Indian Academy of Sciences - Section A
-Proceedings of the Indian National Science Academy (Calcutta)
+Proceedings of the Indian Academy of Sciences
+Proceedings of the Indian Academy of Sciences A
+Proceedings of the Indian Academy of Sciences B
 Proceedings of the Indiana Academy of Sciences
-Proceedings of the International congress of plant sciences
 Proceedings of the Iowa Academy of Science
 Proceedings of the Koninklijke Nederlandse Akademie van Wetenschappen
-Proceedings of the Leeds Philosophical and Literary Society. Scientific Section
+Proceedings of the Leeds Philosophical and Literary Society (Scientific Section)
 Proceedings of the Maryland Academy of Science
 Proceedings of the National Academy of Science
 Proceedings of the National Academy of Sciences
@@ -567,7 +530,7 @@ Proceedings of the Potato Association of America
 Proceedings of the Royal Society
 Proceedings of the Royal Society B
 Proceedings of the Royal Society of Edinburgh
-Proceedings of the Royal Society of London. Series B, Containing Papers of a Biological Character
+Proceedings of the Royal Society. Series B
 Proceedings of the Section of Sciences of the Koninklijke Akademie van Wetenschappen
 Proceedings of the Society for Experimental Biology and Medicine
 Proceedings of the Soil Science Society of America
@@ -578,7 +541,6 @@ Prz. meteorol. i hydrol.
 Przeglad Rolniczy [Agricultural Review]
 Przegląd Geograficzny [Geographical Review]
 Publications de l'Institut Belge pour l'Amélioration de la Betterave
-Quarterly Bulletin - Michigan State University, Agricultural Experiment Station
 Quarterly Journal of Economics
 Quarterly Journal of the Royal Meteorological Society
 Quarterly Review of Biology
@@ -591,14 +553,11 @@ Rastenievodstvo S.S.S.R.
 Records of the Far East Geophysical Institute
 Recueil des travaux botaniques néerlandais
 Redogörelse för verksamheten vid Ultuna Lantbruksinstitut [Report on the activities of the Ultuna Agricultural Institute]
-Rep. Ass. Hawaii. Sug. Technol.
-Report and Proceedings of the 9th International Horticultural Congress in London
+Report of the Hawaiian Sugar Technology Association
 Report of the Iowa State Horticultural Society
 Reports of the Alaska Agriculture Experiment Station
-Reports of the Conference on Agricultural Meteorology in London
-Reports of the Conference on Agricultural Meteorology in London 1931
 Reports of the Experimental and Research Station Cheshunt
-Reports of the Food Investigation Board, Deptartment of Scientific & Industrial Research
+Reports of the Food Investigation Board, Department of Scientific and Industrial Research
 Reports of the National Research Council of Canada
 Reports of the Oregon State Horticultural Society
 Reports of the Quebec Society for the Protection of Plants 1932–34
@@ -608,24 +567,21 @@ Research Studies of the State College Washington
 Rev. Agr. (Dominican Republic)
 Rev. Met. Aerol.
 Rev. Meteorol.
-Reviews
 Revista Argentina de Agronomia
 Revista Meteorologica
 Revista da Faculdade de Ciências, Universidade de Coimbra
 Revista de la Sociedad Cubana de Ingenieros
 Revista de la Sociedad de Estudios Astronómicos y Geofisicos
-Revista de la facultad de Agronomía, La Plata
+Revista de la facultad de Agronomía (La Plata)
 Revista del Instituto Agrícola Catalan de Sant Isidre
 Revista del Instituto de Defensa del Café de Costa Rica
 Revista del Museo de La Plata
 Revue agricole de l'Afrique du Nord
 Revue de Botanique appliquée aux régions tropicales
 Revue de Botanique appliquée et d'Agriculture tropicale
-Revue de Botanique appliquée à l'Agriculture tropicale
 Revue de Géographie Alpine
 Revue de Géographie Régionale
 Revue de Viticulture
-Revue de botanique appliquée et d’agriculture tropicale
 Revue de l'Institut International d'Agriculture
 Revue générale de botanique
 Revue générale de l'electricité
@@ -654,7 +610,6 @@ Scientific American
 Scientific Contributions of the New Hampshire Agricultural Experiment Station
 Scientific Horticulture
 Scientific Monthly
-Scientific Note, India Meteorological Deparment
 Scientific Note, India Meteorological Department
 Scientific Proceedings of the Royal Dublin Society
 Scottish Geographical Magazine
@@ -687,14 +642,12 @@ Svensk Geografisk Årsbok [Swedish Geografical Yearbook]
 Svenska Mosskulturföreningens Tidskrift
 Svenska skogsvårdsföreningens tidskrift [Journal of the Swedish Forest Management Association]
 Sveriges Utsädesförenings Tidskrift [Journal of the Swedish Seed Association]
-Sveriges Utsädesförenings Tidskrift [Swedish Seed Association Journal]
 Tab. Prom.
 Techn. Soc. Zemled
 Technical Bulletin University of Arizona Agricultural Experiment Station
 Technical Bulletin of the U.S. Department of Agriculture
 Terra (Helsingfors)
 Terre Vaudoise
-Terre vaudoise
 Tharandter forstliches Jahrbuch
 The Agricultural Gazette of New South Wales
 The American Naturalist
@@ -703,13 +656,14 @@ The Australian Journal of Experimental Biology and Medical Science
 The Botanical Review
 The California Citrograph
 The Canadian Entomologist
+The Canadian Mining and Metallurgical Bulletin
 The East African Agricultural Journal
 The Gardeners' Chronicle
 The Geographical Journal
 The Journal of Agricultural Science
 The Journal of General Physiology
 The Journal of Physical Chemistry
-The Journal of the Department of Agriculture, Victoria
+The Journal of the Department of Agriculture (Victoria)
 The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science
 The Malaysian Forester
 The Philippine Journal of Science
@@ -729,7 +683,7 @@ Transactions of the Norfolk and Norwich Naturalists' Society
 Transactions of the Peninsula Horticultural Society
 Transactions of the Royal Society for Tropical Medicine and Hygiene
 Transactions of the Royal Society of Canada
-Transactions of the Royal Society of Canada. Section 3
+Transactions of the Royal Society of Canada (Section 3)
 Transactions of the Royal Society of Edinburgh
 Transactions of the Royal Society of South Australia
 Transactions of the South African Philosophical Society
@@ -763,7 +717,7 @@ Umi to Sora [Sea and Sky]
 United States Department of Agriculture Technical Bulletin
 University of California publications in agricultural sciences
 University of California publications in botany
-Universtiy of Michigan Studies
+University of Michigan Studies
 Uzbekistan
 Vermont Botany and Bird Clubs Joint Bulletin
 Veröffentlichungen des Geophysischen Instituts der Universität Leipzig

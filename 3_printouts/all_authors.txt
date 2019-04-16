@@ -1,6 +1,5 @@
 A. S.
 Aamodt, O. S.
-Aamodt, O.S.
 Abbe, C.
 Abbot, C. G.
 Abe, T.
@@ -44,7 +43,6 @@ Allard, H.
 Allard, H. A.
 Allen, A. L.
 Allen, F. W.
-Allen, F. W., Junior
 Allen, R. C.
 Allen, W. E.
 Alter, J. C.
@@ -268,7 +266,6 @@ Bourdel, M.
 Bourne, B. A.
 Boutaric, A.
 Bouygues, H.
-Bouyoucos, G.
 Bouyoucos, G. J.
 Bovie, W. T.
 Bowen, I. S.
@@ -418,7 +415,7 @@ Chamney, N. P.
 Champion, D. L.
 Champlin, M.
 Chandler, D. C.
-Chandler, R. F., Junior
+Chandler, R. F.
 Chandler, W. H.
 Chang, Y. H.
 Chapman, L. J.
@@ -514,7 +511,7 @@ Covert, J. R.
 Coville, F. V.
 Coward, K. H.
 Cox, H. J.
-Crabb, G. A., Jr.
+Crabb, G. A.
 Craggs, B. A.
 Cragoe, E. J.
 Craig, J.
@@ -764,7 +761,7 @@ Flint, F. W.
 Flint, L. H.
 Flora, S. D.
 Flory, E. L.
-Flory, W. S., Jr.
+Flory, W. S.
 Flynn, W. A.
 Flyorov, K. V.
 Foester, H. C.
@@ -1612,7 +1609,7 @@ Mildbraed, J.
 Milewski, M.
 Miliani, R.
 Miller, D. H.
-Miller, E. H., Jr.
+Miller, E. H.
 Miller, E. R.
 Miller, E. S.
 Miller, G. D.
@@ -1981,7 +1978,6 @@ Roe, E. J.
 Roe, H. B.
 Roebuck, A.
 Roeser, J.
-Roeser, J., Junior
 Rogers, W. S.
 Rogoziński, A.
 Rohrbaugh, P. W.

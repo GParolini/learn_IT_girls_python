@@ -23,3 +23,7 @@ def colval_to_int(df, column):
     )
     return df
 
+#def get_journal_art_(df):
+    #articles = df.loc[df["Item Type"] == "journalArticle"]
+    #for article in articles:
+        

@@ -39,31 +39,31 @@ lc = pr.itemtype_counts(df)
 ut.print_csv_printouts (lc, "itemtype_counts.csv")
 
 #Generate a list of the report titles and print them in a txt file
-report_titles = pr.print_report_titles(df)
+report_titles = pr.get_report_titles(df)
 ut.print_txt_printouts (report_titles, "report_titles.txt")
 
 #Generate a list of the thesis titles and print them in a txt file
-thesis_titles = pr.print_thesis_titles(df)
+thesis_titles = pr.get_thesis_titles(df)
 ut.print_txt_printouts (thesis_titles, "thesis_titles.txt")
 
 #Generate a list of the book titles and print them in a txt file
-book_titles = pr.print_book_titles(df)
+book_titles = pr.get_book_titles(df)
 ut.print_txt_printouts (book_titles, "book_titles.txt")
 
 #Generate a list of the journal titles and print them in a txt file
-journal_titles = pr.print_journal_titles(df)
+journal_titles = pr.get_journal_titles(df)
 ut.print_txt_printouts (journal_titles, "journal_titles.txt")
 
 #Generate a list of the magazine titles and print them in a txt file
-magazine_titles = pr.print_magazine_titles(df)
+magazine_titles = pr.get_magazine_titles(df)
 ut.print_txt_printouts (magazine_titles, "magazine_titles.txt")
 
 #Generate a list of the newspaper titles and print them in a txt file
-newspaper_titles = pr.print_newspaper_titles(df)
+newspaper_titles = pr.get_newspaper_titles(df)
 ut.print_txt_printouts (newspaper_titles, "newspaper_titles.txt")
 
 #Generate a list of the first authors and print them in a txt file
-first_authors = pr.print_first_authors(df)
+first_authors = pr.get_first_authors(df)
 ut.print_txt_printouts (first_authors, "first_authors.txt")
 
 #Generate the author count csv file
@@ -71,13 +71,19 @@ lc = pr.author_counts(df)
 ut.print_csv_printouts (lc, "author_counts.csv")
 
 #Generate a list of all the authors and print them in a txt file
-all_authors = pr.print_all_authors(df)
+all_authors = pr.get_all_authors(df)
 ut.print_txt_printouts (all_authors, "all_authors.txt")
 
+#Generate a list of the multi-authors and print them in a txt file
+first_authors = list(pr.get_first_authors(df))
+multi_authors = pr.get_multiauthors(first_authors)
+ut.print_txt_printouts (multi_authors, "multiauthors.txt")
+
 #Generate a list of the co-authors and print them in a txt file
-first_authors = list(pr.print_first_authors(df))
-co_authors = pr.print_coauthors(first_authors)
-ut.print_txt_printouts (co_authors, "co_authors.txt")
+multi_authors = list(multi_authors)
+all_authors = list(all_authors)
+co_authors = pr.get_coauthors(multi_authors, all_authors)
+ut.print_txt_printouts (co_authors, "coauthors.txt")
 
 #Plot the histogram of the publications per year and save it in 4_plots
 fig2 = pl.hist_pub_year(df)
