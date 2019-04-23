@@ -42,6 +42,20 @@ def get_journal_titles(df):
     sorted_titles = sorted(titles_unique)
     return sorted_titles
 
+#count articles for each journal
+def get_art_count_per_journal(df):
+    articles = df.loc[df["Item Type"] == "journalArticle"]
+    count_per_j = articles["Publication Title"].value_counts()
+    return count_per_j
+
+#list authors for each journal
+#def get_authors_per_journal(df):
+    #articles = df.loc[df["Item Type"] == "journalArticle"]
+    #articles_not_anon = articles["Author"].dropna()
+    #authors_grouped = articles_not_anon[articles_not_anon["Author"]].groupby("Publication Title")
+    #authors = authors_grouped["Author"].unique()
+    #return authors
+
 #magazines
 def get_magazine_titles(df):
     articles = df.loc[df["Item Type"] == "magazineArticle"]
@@ -139,5 +153,15 @@ def get_coauthors(mylist, authors_list):
         all_coauthors.append(author_coauthors)
         all_coauthors_final = [x for x in all_coauthors if x != []]
     return all_coauthors_final
+
+#Get category counts for all the journal articles in the correspondence dataframe
+def jourcat_counts(df):
+    jourcat_counts = df["Category"].value_counts()
+    return jourcat_counts
+
+#Get category counts for all the journal articles and all the years in the correspondence dataframe
+def jourcat_year_counts(df):
+    jourcat_year_counts = df.groupby(["Category", "Publication Year"]).size()
+    return jourcat_year_counts
 
     

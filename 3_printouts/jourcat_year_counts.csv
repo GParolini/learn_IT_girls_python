@@ -1,0 +1,487 @@
+Agriculture,1901,2
+Agriculture,1902,1
+Agriculture,1903,1
+Agriculture,1904,2
+Agriculture,1905,2
+Agriculture,1906,1
+Agriculture,1907,1
+Agriculture,1908,3
+Agriculture,1909,1
+Agriculture,1911,2
+Agriculture,1913,1
+Agriculture,1914,3
+Agriculture,1915,5
+Agriculture,1918,2
+Agriculture,1919,3
+Agriculture,1920,5
+Agriculture,1921,7
+Agriculture,1922,3
+Agriculture,1923,5
+Agriculture,1924,10
+Agriculture,1925,14
+Agriculture,1926,11
+Agriculture,1927,10
+Agriculture,1928,26
+Agriculture,1929,32
+Agriculture,1930,45
+Agriculture,1931,70
+Agriculture,1932,70
+Agriculture,1933,101
+Agriculture,1934,47
+Agriculture,1935,67
+Agriculture,1936,28
+Agriculture,1937,10
+Agriculture,1938,4
+Agriculture,1939,3
+Agriculture,1940,5
+Agriculture,1941,4
+Agriculture,1942,4
+Agriculture,1943,6
+Agriculture,1944,4
+Agriculture,1945,2
+Agriculture,1946,8
+Agriculture,1947,7
+Agriculture,1948,6
+Agriculture,1949,8
+Agriculture,1950,7
+Biology,1906,1
+Biology,1920,2
+Biology,1921,2
+Biology,1924,1
+Biology,1926,3
+Biology,1927,1
+Biology,1928,1
+Biology,1929,8
+Biology,1930,4
+Biology,1931,4
+Biology,1932,7
+Biology,1933,11
+Biology,1934,8
+Biology,1935,3
+Biology,1936,2
+Biology,1938,1
+Biology,1939,1
+Biology,1942,1
+Biology,1945,2
+Biology,1947,1
+Biology,1948,2
+Biology,1949,3
+Biology,1950,1
+Botany/Plant Breeding,1902,2
+Botany/Plant Breeding,1905,2
+Botany/Plant Breeding,1906,2
+Botany/Plant Breeding,1907,1
+Botany/Plant Breeding,1908,3
+Botany/Plant Breeding,1909,4
+Botany/Plant Breeding,1910,2
+Botany/Plant Breeding,1913,1
+Botany/Plant Breeding,1914,7
+Botany/Plant Breeding,1915,2
+Botany/Plant Breeding,1916,3
+Botany/Plant Breeding,1917,4
+Botany/Plant Breeding,1918,3
+Botany/Plant Breeding,1919,3
+Botany/Plant Breeding,1920,3
+Botany/Plant Breeding,1921,1
+Botany/Plant Breeding,1922,1
+Botany/Plant Breeding,1923,4
+Botany/Plant Breeding,1924,10
+Botany/Plant Breeding,1925,7
+Botany/Plant Breeding,1926,14
+Botany/Plant Breeding,1927,7
+Botany/Plant Breeding,1928,13
+Botany/Plant Breeding,1929,18
+Botany/Plant Breeding,1930,19
+Botany/Plant Breeding,1931,24
+Botany/Plant Breeding,1932,29
+Botany/Plant Breeding,1933,37
+Botany/Plant Breeding,1934,28
+Botany/Plant Breeding,1935,21
+Botany/Plant Breeding,1936,10
+Botany/Plant Breeding,1937,6
+Botany/Plant Breeding,1938,6
+Botany/Plant Breeding,1939,7
+Botany/Plant Breeding,1940,6
+Botany/Plant Breeding,1941,10
+Botany/Plant Breeding,1942,3
+Botany/Plant Breeding,1943,8
+Botany/Plant Breeding,1944,8
+Botany/Plant Breeding,1945,6
+Botany/Plant Breeding,1946,5
+Botany/Plant Breeding,1947,7
+Botany/Plant Breeding,1948,7
+Botany/Plant Breeding,1949,10
+Botany/Plant Breeding,1950,3
+Chemistry,1924,1
+Chemistry,1926,1
+Chemistry,1927,1
+Chemistry,1930,1
+Chemistry,1931,1
+Chemistry,1932,1
+Chemistry,1933,1
+Chemistry,1935,2
+Chemistry,1936,1
+Chemistry,1937,1
+Commodities,1916,1
+Commodities,1932,1
+Commodities,1933,1
+Commodities,1934,1
+Ecology,1920,2
+Ecology,1921,2
+Ecology,1922,1
+Ecology,1923,1
+Ecology,1924,1
+Ecology,1926,2
+Ecology,1929,1
+Ecology,1930,1
+Ecology,1931,5
+Ecology,1932,5
+Ecology,1933,3
+Ecology,1934,6
+Ecology,1935,5
+Ecology,1936,2
+Ecology,1940,1
+Ecology,1942,1
+Ecology,1943,1
+Ecology,1945,1
+Ecology,1949,1
+Ecology,1950,4
+Economics,1928,1
+Economics,1930,2
+Economics,1931,3
+Economics,1932,8
+Economics,1933,3
+Economics,1934,1
+Engineering,1915,1
+Engineering,1924,3
+Engineering,1928,1
+Engineering,1931,1
+Engineering,1932,2
+Engineering,1933,3
+Engineering,1934,3
+Engineering,1935,1
+Engineering,1936,2
+Engineering,1940,2
+Engineering,1946,1
+Engineering,1947,1
+Engineering,1948,1
+Engineering,1949,2
+Engineering,1950,1
+Entomology,1928,1
+Entomology,1931,6
+Entomology,1932,8
+Entomology,1933,2
+Entomology,1934,8
+Entomology,1935,5
+Food Science,1908,1
+Food Science,1919,1
+Food Science,1921,2
+Food Science,1923,1
+Food Science,1925,1
+Food Science,1926,1
+Food Science,1929,3
+Food Science,1930,2
+Food Science,1931,3
+Food Science,1932,3
+Food Science,1933,13
+Food Science,1934,5
+Food Science,1935,3
+Food Science,1936,3
+Food Science,1938,2
+Food Science,1941,3
+Food Science,1942,1
+Food Science,1945,1
+Food Science,1947,1
+Food Science,1948,1
+Food Science,1949,2
+Food Science,1950,2
+Forestry,1917,2
+Forestry,1918,1
+Forestry,1925,1
+Forestry,1928,1
+Forestry,1929,1
+Forestry,1930,6
+Forestry,1931,5
+Forestry,1932,25
+Forestry,1933,17
+Forestry,1934,19
+Forestry,1935,7
+Forestry,1936,5
+Forestry,1938,1
+Forestry,1939,2
+Forestry,1947,1
+Forestry,1948,1
+Gardening,1925,1
+Gardening,1926,1
+Gardening,1929,1
+Gardening,1931,2
+Gardening,1932,1
+Gardening,1933,2
+Gardening,1934,1
+Gardening,1935,2
+Gardening,1941,1
+General Science,1901,2
+General Science,1902,3
+General Science,1903,1
+General Science,1904,1
+General Science,1905,2
+General Science,1906,1
+General Science,1909,1
+General Science,1910,1
+General Science,1911,2
+General Science,1912,1
+General Science,1913,1
+General Science,1915,3
+General Science,1916,2
+General Science,1917,2
+General Science,1918,2
+General Science,1919,3
+General Science,1920,8
+General Science,1921,2
+General Science,1922,3
+General Science,1923,5
+General Science,1924,2
+General Science,1925,5
+General Science,1926,4
+General Science,1927,2
+General Science,1928,2
+General Science,1929,7
+General Science,1930,14
+General Science,1931,10
+General Science,1932,24
+General Science,1933,32
+General Science,1934,22
+General Science,1935,29
+General Science,1936,15
+General Science,1937,4
+General Science,1938,3
+General Science,1939,7
+General Science,1940,1
+General Science,1941,6
+General Science,1942,2
+General Science,1943,3
+General Science,1944,2
+General Science,1945,3
+General Science,1946,6
+General Science,1947,3
+General Science,1948,2
+General Science,1949,3
+General Science,1950,8
+Geography,1910,2
+Geography,1912,2
+Geography,1915,1
+Geography,1916,1
+Geography,1919,1
+Geography,1920,1
+Geography,1921,1
+Geography,1922,1
+Geography,1925,3
+Geography,1927,1
+Geography,1928,1
+Geography,1929,1
+Geography,1930,1
+Geography,1931,1
+Geography,1932,5
+Geography,1933,9
+Geography,1934,2
+Geography,1935,4
+Geography,1936,3
+Geography,1938,2
+Geography,1939,1
+Geography,1940,1
+Geography,1942,3
+Geography,1946,1
+Geography,1947,3
+Geography,1948,2
+Geography,1949,1
+Geography,1950,4
+Horticulture,1905,1
+Horticulture,1907,1
+Horticulture,1911,1
+Horticulture,1913,2
+Horticulture,1914,2
+Horticulture,1917,1
+Horticulture,1920,2
+Horticulture,1922,2
+Horticulture,1924,2
+Horticulture,1925,1
+Horticulture,1926,6
+Horticulture,1927,3
+Horticulture,1928,2
+Horticulture,1929,4
+Horticulture,1930,10
+Horticulture,1931,12
+Horticulture,1932,12
+Horticulture,1933,11
+Horticulture,1934,23
+Horticulture,1935,2
+Horticulture,1936,4
+Horticulture,1938,1
+Horticulture,1939,2
+Horticulture,1940,1
+Horticulture,1941,4
+Horticulture,1942,5
+Horticulture,1943,1
+Horticulture,1944,1
+Horticulture,1946,2
+Horticulture,1947,1
+Horticulture,1948,1
+Horticulture,1949,2
+Horticulture,1950,5
+Hydrology,1926,1
+Hydrology,1932,2
+Hydrology,1933,1
+Hydrology,1934,1
+Hydrology,1935,1
+Hydrology,1936,2
+Hydrology,1938,1
+Hydrology,1943,1
+Hydrology,1950,1
+Medicine/Physiology,1917,1
+Medicine/Physiology,1919,1
+Medicine/Physiology,1923,1
+Medicine/Physiology,1929,2
+Medicine/Physiology,1930,1
+Medicine/Physiology,1933,5
+Medicine/Physiology,1934,7
+Medicine/Physiology,1935,1
+Medicine/Physiology,1946,1
+Medicine/Physiology,1949,1
+Meteorology,1901,4
+Meteorology,1903,2
+Meteorology,1904,2
+Meteorology,1905,2
+Meteorology,1907,1
+Meteorology,1908,1
+Meteorology,1910,1
+Meteorology,1911,4
+Meteorology,1912,2
+Meteorology,1913,1
+Meteorology,1914,3
+Meteorology,1915,3
+Meteorology,1917,1
+Meteorology,1918,2
+Meteorology,1919,6
+Meteorology,1920,6
+Meteorology,1921,6
+Meteorology,1922,9
+Meteorology,1923,1
+Meteorology,1924,3
+Meteorology,1925,2
+Meteorology,1926,3
+Meteorology,1927,3
+Meteorology,1928,2
+Meteorology,1929,3
+Meteorology,1930,21
+Meteorology,1931,23
+Meteorology,1932,32
+Meteorology,1933,25
+Meteorology,1934,41
+Meteorology,1935,18
+Meteorology,1936,18
+Meteorology,1937,9
+Meteorology,1938,8
+Meteorology,1939,10
+Meteorology,1940,5
+Meteorology,1941,10
+Meteorology,1942,4
+Meteorology,1943,4
+Meteorology,1944,2
+Meteorology,1945,1
+Meteorology,1946,2
+Meteorology,1947,4
+Meteorology,1948,11
+Meteorology,1949,17
+Meteorology,1950,24
+ND,1913,1
+ND,1915,1
+ND,1917,1
+ND,1923,2
+ND,1924,2
+ND,1925,1
+ND,1926,1
+ND,1927,4
+ND,1928,8
+ND,1929,6
+ND,1930,14
+ND,1931,16
+ND,1932,58
+ND,1933,67
+ND,1934,57
+ND,1935,10
+ND,1936,4
+ND,1939,1
+ND,1945,1
+ND,1946,2
+ND,1948,3
+ND,1949,9
+ND,1950,7
+Natural History,1902,1
+Natural History,1908,1
+Natural History,1913,1
+Natural History,1914,1
+Natural History,1922,1
+Natural History,1923,1
+Natural History,1925,1
+Natural History,1927,4
+Natural History,1928,2
+Natural History,1929,1
+Natural History,1930,4
+Natural History,1931,3
+Natural History,1932,2
+Natural History,1933,7
+Natural History,1934,3
+Natural History,1935,1
+Natural History,1937,1
+Natural History,1945,1
+Natural History,1947,2
+Natural History,1949,1
+Natural History,1950,1
+Physics/Geophysics,1907,1
+Physics/Geophysics,1924,2
+Physics/Geophysics,1926,1
+Physics/Geophysics,1928,1
+Physics/Geophysics,1929,1
+Physics/Geophysics,1930,2
+Physics/Geophysics,1931,2
+Physics/Geophysics,1932,3
+Physics/Geophysics,1933,8
+Physics/Geophysics,1934,6
+Physics/Geophysics,1935,2
+Physics/Geophysics,1937,1
+Physics/Geophysics,1938,1
+Physics/Geophysics,1941,1
+Physics/Geophysics,1942,1
+Physics/Geophysics,1943,3
+Physics/Geophysics,1944,3
+Physics/Geophysics,1946,1
+Physics/Geophysics,1948,2
+Physics/Geophysics,1949,5
+Physics/Geophysics,1950,3
+Scientific Instruments,1926,1
+Scientific Instruments,1931,1
+Scientific Instruments,1932,1
+Scientific Instruments,1940,1
+Soil Science,1919,1
+Soil Science,1926,1
+Soil Science,1928,1
+Soil Science,1929,1
+Soil Science,1930,3
+Soil Science,1931,5
+Soil Science,1932,3
+Soil Science,1933,4
+Soil Science,1934,2
+Soil Science,1935,6
+Soil Science,1936,3
+Soil Science,1938,2
+Soil Science,1939,4
+Soil Science,1942,2
+Soil Science,1943,1
+Soil Science,1944,1
+Soil Science,1946,1
+Soil Science,1947,1
+Soil Science,1948,1
+Zoology,1928,1
+Zoology,1932,1
+Zoology,1933,1
+Zoology,1935,1
