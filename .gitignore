@@ -2,3 +2,8 @@
 ######################
 
 .DS_Store
+
+# Git generated files #
+######################
+
+.Rhistory
