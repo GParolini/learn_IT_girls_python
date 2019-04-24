@@ -80,9 +80,6 @@ def jourcat_count_list():
         return my_list
     
 ###########################
-
-    
-
 #Generate a new dataframe df3 starting with the full dataframe and the categories dataframe
 def get_journal_cat(df,df_cat):
     df1 = df.loc[df["Item Type"] == "journalArticle"]
@@ -131,7 +128,7 @@ def agg_jcat_list():
     return agg_list
 
      
-        
+###########################       
 #Strip blanck spaces from all columns of a dataframe
 def strip_all_cols(df): 
     df.columns = df.columns.str.strip()
