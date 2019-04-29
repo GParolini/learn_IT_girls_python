@@ -13,6 +13,8 @@ import print_methods as pr
 import plot_methods as pl
 import utilities as ut
 
+
+
 #Load the data
 df = pd.read_csv(os.path.join("..", "1_data", "bibliography_data.csv"))
 
@@ -90,12 +92,23 @@ first_authors = list(pr.get_first_authors(df3))
 multi_authors = pr.get_multiauthors(first_authors)
 ut.print_txt_printouts (multi_authors, "multiauthors.txt")
 
-#Generate a list of the co-authors and print them in a txt file
-multi_authors = list(multi_authors)
-all_authors = list(all_authors)
-co_authors = pr.get_coauthors(multi_authors, all_authors)
-ut.print_txt_printouts (co_authors, "coauthors.txt")
-print(co_authors)
+#Generate a list of the co-authors nested and print them in a txt file
+multi_authors_list = list(multi_authors)
+all_authors_list = list(all_authors)
+co_authors_nested = pr.get_coauthors_nested(multi_authors_list, all_authors_list)
+ut.print_txt_printouts (co_authors_nested, "coauthors_nested.txt")
+#ut.print_csv_printouts (co_authors_nested, "coauthors_nested.csv")
+
+#dictionary_coauthors = pr.get_dict(co_authors_nested)
+#ut.print_txt_printouts (dictionary_coauthors, "dictionary_coauthors.txt")
+
+#Generate a flattened list of the co-authors and print them in a txt file
+co_authors_flat1 = pr.get_coauthors_flat1(co_authors_nested)
+ut.print_txt_printouts (co_authors_flat1, "coauthors_flat1.txt")
+co_authors_flat2 = pr.get_coauthors_flat2(co_authors_nested)
+ut.print_txt_printouts (co_authors_flat2, "coauthors_flat2.txt")
+#co_authors_flat3 = pr.get_coauthors_flat3(co_authors_nested)
+#ut.print_txt_printouts (co_authors_flat3, "coauthors_flat3.txt")
 
 #Plot the histogram of the publications per year and save it in 4_plots
 fig2 = pl.hist_pub_year(df)
@@ -144,7 +157,7 @@ ut.print_plot(fig6, "plot_scatter_jcat_l.png")
 fig7 = pl.scatter_grouped()
 ut.print_plot(fig7, "plot_scatter_grouped.png")
 
-#Generate the scatter plot group of the categories/year count for 192, 1930 and 1935
+#Generate the scatter plot group of the categories/year count for 1925, 1930 and 1935
 fig8 = pl.scatter_grouped_lg()
 ut.print_plot(fig8, "plot_scatter_grouped_lg.png")
 

@@ -10,7 +10,7 @@ import os
 import seaborn as sns
 import matplotlib.pyplot as plt
 import utilities as ut
-
+plt.ioff()
 
 #Plot the histogram for the publications printed in each year
 def hist_pub_year(df):
@@ -18,12 +18,13 @@ def hist_pub_year(df):
     df.hist(column="Publication Year", bins=50 )
     plt.xlabel("Publication Year",fontsize=15)
     plt.ylabel("Frequency",fontsize=15)
+    plt.close()
     
 #Plot the histogram of the publications' languages
 def count_plot_lang(df):
      sns.set(style="darkgrid")
      sns.set(rc={"figure.figsize":(25,14)})
-     sns.countplot(y="Language", data=df)
+     sns.countplot(x="Language", data=df)
 
 #Plot pie chart of the publications' languages
 def pie_lang():
@@ -38,6 +39,7 @@ def pie_lang():
     plt.title("Publications distributed according to language")
     plt.legend(loc="best", labels=languages )
     plt.axis('equal')
+    plt.close()
     
 #Plot pie chart of the journal categories
 def pie_jcat():
@@ -52,6 +54,7 @@ def pie_jcat():
     plt.title("Articles distributed according to journal category")
     plt.legend(loc="best", labels=jcat )
     plt.axis('equal')
+    plt.close()
     
 #Scatter plot for evolution of categories
 def scatter_jcat():
@@ -59,6 +62,7 @@ def scatter_jcat():
     df_cat = pd.read_csv(os.path.join("..", "3_printouts", "jourcat_year_counts.csv"),names = col_val)
     plt.figure(figsize=(25,14))
     plt.scatter(df_cat["Publication Year"],df_cat["Category"], s=df_cat["Count"])
+    plt.close()
     
 #Scatter plot for evolution of categories limited to the years 1925-1935
 def scatter_jcat_l():
@@ -70,6 +74,7 @@ def scatter_jcat_l():
     df_cat_l = df_cat_l1.drop(df_drop_rows_1935.index, axis=0)
     plt.figure(figsize=(25,14))
     plt.scatter(df_cat_l["Publication Year"],df_cat_l["Category"], s=df_cat_l["Count"])
+    plt.close()
     
 #Scatter plot for evolution of categories grouped
 def scatter_grouped():
@@ -82,7 +87,7 @@ def scatter_grouped_lg():
     col_val = ["Category", "Publication Year", "Count"]
     df_cat = pd.read_csv(os.path.join("..", "3_printouts", "jourcat_year_counts.csv"),names = col_val)
     df_cat_lg = df_cat.loc[(df_cat["Publication Year"] == 1925) | (df_cat["Publication Year"] == 1930) | (df_cat["Publication Year"] == 1935)]
-    print(df_cat_lg)
+    #print(df_cat_lg)
     sns.scatterplot(x="Publication Year", y="Category", hue="Count", legend = "full", data=df_cat_lg)
     
 #Line plot

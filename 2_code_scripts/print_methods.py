@@ -5,6 +5,8 @@ Created on Thu Apr  4 23:05:36 2019
 
 @author: giudittaparolini
 """
+from iteration_utilities import deepflatten
+import itertools
 
 #Get item type counts
 def itemtype_counts(df):
@@ -119,40 +121,98 @@ def get_multiauthors(my_list):
             new_list.append(element)
         else:
             continue
-        #new_list.str.strip(" ")
     return new_list
 
-#Get co_authors    
-def get_coauthors(mylist, authors_list):
-    #all_coauthors = []
-    
-    #for author in authors_list:
-        #author_coauthors = []
-        #for item in mylist:
-            #if author in item:
-                #author_coauthors.append(item)
-        #author_coauthors_final = [x for x in author_coauthors if x != []]
-        #author_coauthors_final.insert(0,["Coauthors of %s:" % author])
-                
-        #all_coauthors.append(author_coauthors_final)
-        #all_coauthors_final = [x for x in all_coauthors if x != []]
-    #return all_coauthors_final
-
+#Get co_authors nested   
+def get_coauthors_nested(coauthors, authors):
     all_coauthors = []
-    
-    for author in authors_list:
+  
+    for author in authors:
         author_coauthors = []
-        for item in mylist:
+        for item in coauthors:
             if author in item:
                 author_coauthors.append(item)
             else:
                 continue
-            if author_coauthors != []:
-                author_coauthors.insert(0,["Coauthors of %s:" % author])
-        #author_coauthors_final = [x for x in author_coauthors if x != []]
+        if author_coauthors != []:
+            author_coauthors.insert(0,["Coauthors of %s:" % author])
+           
         all_coauthors.append(author_coauthors)
         all_coauthors_final = [x for x in all_coauthors if x != []]
+        
     return all_coauthors_final
+        
+#def get_dict(coauthors_nested):
+    #my_tuple =[]
+    #for element in coauthors_nested:
+        #for item in element:
+            #my_element = tuple(item)
+    #my_tuple.append(my_element)
+    
+    #result = {}
+    #for coauthors in my_tuple:
+        #for item in coauthors[1:]:
+            #result[item] = coauthors[0]
+            #print (result)     
+
+
+
+#Get co_authors flat
+def get_coauthors_flat1(coauthors_nested):
+    flat=itertools.chain.from_iterable(coauthors_nested)
+    my_tuple = tuple(flat)
+    dictionary = dict( (k[0], k[1:]) for k in my_tuple)
+    return dictionary
+
+def get_coauthors_flat2(coauthors_nested):
+    flat=itertools.chain.from_iterable(coauthors_nested)
+    coauthors_final = list(deepflatten(flat, depth=1))
+    return coauthors_final
+    
+#def get_coauthors_flat3(coauthors_nested):
+    #flat=itertools.chain.from_iterable(coauthors_nested)
+    #coauthors_final = list(deepflatten(coauthors_nested, depth=1))
+    #for item in coauthors_final[i]:
+        #if "Coauthors of" is in item:
+            #break
+        #else:
+         #item[i] + item[i+1]   
+    #print(coauthors_final)
+    #return coauthors_final  
+    
+    
+    
+    #return coauthors_final
+    #coauthors_final_nospaces = [x.strip(' ') for x in coauthors_final]
+    #coauthors_final_nospaces = [elem for elem in coauthors_final_nospaces if elem != elem]
+    #return coauthors_final
+    #return coauthors_final_nospaces
+    #result = []
+    #for item in coauthors_final_nospaces:
+        #if ("Coauthors of" in item) & (item not in result):
+                #result.append(item)
+        #else:
+            #result.append(item)
+    #return result
+
+    #list1 = [ elem for elem in list1 if elem % 2 != 0] 
+    
+    
+    #coauthors_final_nodup = list(set(coauthors_final))
+    #return coauthors_final_nodup  
+    #flattened = []
+    #for sublist in coauthors_nested:
+        #for val in sublist:
+            #print(val)
+            #flattened.append(val)
+        #continue
+    #return flattened
+    
+
+
+        
+        
+    
 
 #Get category counts for all the journal articles in the correspondence dataframe
 def jourcat_counts(df):
