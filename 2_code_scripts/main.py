@@ -12,6 +12,7 @@ import data_methods as dm
 import print_methods as pr
 import plot_methods as pl
 import utilities as ut
+#import pickle
 
 
 
@@ -63,10 +64,6 @@ ut.print_txt_printouts (journal_titles, "journal_titles.txt")
 articles_per_journal = pr.get_art_count_per_journal(df3)
 ut.print_csv_printouts (articles_per_journal, "articles_per_journal.csv")
 
-#Generate a list of the authors who published in each journal and print them in a csv file
-#authors_per_journal = pr.get_authors_per_journal(df3)
-#ut.print_csv_printouts (authors_per_journal, "authors_per_journal.csv")
-
 #Generate a list of the magazine titles and print them in a txt file
 magazine_titles = pr.get_magazine_titles(df3)
 ut.print_txt_printouts (magazine_titles, "magazine_titles.txt")
@@ -96,19 +93,22 @@ ut.print_txt_printouts (multi_authors, "multiauthors.txt")
 multi_authors_list = list(multi_authors)
 all_authors_list = list(all_authors)
 co_authors_nested = pr.get_coauthors_nested(multi_authors_list, all_authors_list)
+authors = pr.get_pop_author(co_authors_nested)
 ut.print_txt_printouts (co_authors_nested, "coauthors_nested.txt")
-#ut.print_csv_printouts (co_authors_nested, "coauthors_nested.csv")
 
-#dictionary_coauthors = pr.get_dict(co_authors_nested)
-#ut.print_txt_printouts (dictionary_coauthors, "dictionary_coauthors.txt")
+#Generate a list of the co-authors and print them in a txt file
+co_authors_pop = pr.get_coauthors_pop(co_authors_nested)
+ut.print_txt_printouts (co_authors_pop, "coauthors_pop.txt")
 
-#Generate a flattened list of the co-authors and print them in a txt file
-co_authors_flat1 = pr.get_coauthors_flat1(co_authors_nested)
-ut.print_txt_printouts (co_authors_flat1, "coauthors_flat1.txt")
-co_authors_flat2 = pr.get_coauthors_flat2(co_authors_nested)
-ut.print_txt_printouts (co_authors_flat2, "coauthors_flat2.txt")
-#co_authors_flat3 = pr.get_coauthors_flat3(co_authors_nested)
-#ut.print_txt_printouts (co_authors_flat3, "coauthors_flat3.txt")
+#Generate a dictionary of the co-authors 
+co_authors_flat = pr.get_coauthors_flatten(co_authors_pop)
+co_authors_unique = pr.get_coauthors_unique (co_authors_flat)
+coauthors_dict = pr.get_dict_coauthors(authors,co_authors_unique)
+coauthors_dict_clean = pr.get_dict_clean(coauthors_dict)
+ut.save_dict(coauthors_dict_clean)
+ut.print_coaut_dict("coauthors_dict.pickle", "my_coauthors.txt")
+#print(coauthors_dict_clean)
+#ut.print_txt_printouts (co_authors_unique, "coauthors_unique.txt")
 
 #Plot the histogram of the publications per year and save it in 4_plots
 fig2 = pl.hist_pub_year(df)

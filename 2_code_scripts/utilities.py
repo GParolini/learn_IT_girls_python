@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import csv
 import itertools
 import data_methods as dm
+import pickle 
 
 # Print to a csv file in the folder 1_data
 def print_csv_data (df, filename):
@@ -32,6 +33,24 @@ def print_plot (fig, filename):
     plt.savefig(os.path.join("..", "4_plots", filename))
 
 ###########################################
+#Save a dictionary
+def save_dict(my_dict):
+    pickle_out = open(os.path.join("..", "3_printouts", "coathours_dict.pickle"),"wb")
+    pickle.dump(my_dict, pickle_out)
+    pickle_out.close()
+
+def print_coaut_dict(picklefile, filename):
+    pickle_in = open(os.path.join("..", "3_printouts", "coathours_dict.pickle"),"rb")
+    my_dict = pickle.load(pickle_in)
+    my_keys = my_dict.keys()
+    my_keys_sorted = sorted(my_keys)
+    with open(os.path.join("..", "3_printouts", filename),'w') as outfile:
+        for key in sorted(my_keys_sorted):
+            print ("Coauthor(s) of " + key + ": ", my_dict[key], file=outfile)
+    
+    
+    
+    
        
 def lang_count_list():
     with open(os.path.join("..", "3_printouts","lang_counts.csv")) as f:
@@ -136,3 +155,14 @@ def strip_all_cols(df):
 #Strip blanck spaces from a specific column of a dataframe
 def stripcol(df,column): 
     df[column] = df[column].str.strip()
+
+###########################
+#Flatten lists
+def flatten(lis):
+    new_lis = []
+    for item in lis:
+        if type(item) == type([]):
+            new_lis.extend(flatten(item))
+        else:
+            new_lis.append(item)
+    return new_lis
