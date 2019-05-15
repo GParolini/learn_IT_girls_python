@@ -166,3 +166,71 @@ def flatten(lis):
         else:
             new_lis.append(item)
     return new_lis
+
+
+##########################
+#Get the file_id
+#all_files = os.listdir("../1_data/papers/")
+        
+    #for my_file in all_files:
+        #file_id =
+        
+    #return (text)
+
+
+##########################
+#Read all the txt files using the file_id
+    
+def read_art_txt_id(file_id):
+    all_files = os.listdir("../1_data/papers/")
+        
+    for my_file in all_files:
+        with open (os.path.join("..", "1_data","papers", my_file), "rt") as f: 
+            text = f.read()
+    return (text)
+
+
+
+
+
+
+
+##########################
+#Read all the txt files in a folder as a string
+    
+def read_art_txt():
+    all_files = os.listdir("../1_data/papers/")
+    
+    files_text = []
+
+    for my_file in all_files:
+        with open (os.path.join("..", "1_data","papers", my_file), "rt") as f: 
+            text = f.read().replace("\n", "")
+            files_text.append(text + "\n")
+            
+            continue
+            
+    return (files_text)
+
+
+##########################
+#Read a single txt file using the file name
+    
+def read_art_txt_file(my_file):
+    with open (os.path.join("..", "1_data","papers", my_file), "rt") as f: 
+            text = f.read().replace("\n", "")
+            
+    return (text)
+
+        
+        
+        
+        #with open(my_file, "r") as f:
+            #f.readline()
+            #print(f)
+            #text = f.readline()
+            #return text.split()
+    
+
+
+
