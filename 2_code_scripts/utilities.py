@@ -13,6 +13,7 @@ import itertools
 import data_methods as dm
 import pickle
 import glob
+import re
 
 # Print to a csv file in the folder 1_data
 def print_csv_data (df, filename):
@@ -32,6 +33,9 @@ def print_csv_printouts (df, filename):
 # Pront a jpg figure in the folder 4_plots
 def print_plot (fig, filename):
     plt.savefig(os.path.join("..", "4_plots", filename))
+    
+def print_csv_data_headers (df, filename):
+    df.to_csv(os.path.join("..", "1_data", "papers", filename), header=df.columns)
 
 ###########################################
 #Save a dictionary
@@ -169,31 +173,43 @@ def flatten(lis):
     return new_lis
 
 ##########################
-#Read all the txt files in a folder as a string
+#Read the id of all the txt files in a folder
     
-def read_art_txt():
+def read_art_id():
     all_files = glob.glob("../1_data/papers/*.txt")
-    files_text = []
+    files_ids = []
 
     for my_file in all_files:
-        with open (my_file) as f: 
-            text = f.read()
-            files_text.append(text)
+            filename = os.path.basename(my_file)
+            file_id = os.path.splitext(filename)[0]
+            files_ids.append(file_id)
             
             continue
             
-    return (files_text)
+    return (files_ids)
 
 ##########################
-#Read a single txt file using the file name
+#Read a single txt file using the file id
     
-def read_art_txt_file(my_file):
-    with open (os.path.join("..", "1_data","papers", my_file), "rt") as f: 
+def read_art_txt(file_id):
+    file_ext = file_id + ".txt"
+    
+    with open (os.path.join("..", "1_data","papers", file_ext), "rt") as f: 
             text = f.read()
             
     return (text)
 
-    
+##########################
+#Count the length of a txt file
+def get_length_art_file(file_id):
+    file_txt = read_art_txt(file_id)
+    length = len(file_txt) - 1
+    return length  
 
-
-
+##########################
+#Get words in a txt file (by counting white spaces)
+def get_whitespaces_file(file_id):
+    file_txt = read_art_txt(file_id)
+    word_count = len(re.findall(r' +', file_txt))
+    final_word_count = word_count + 1
+    return final_word_count

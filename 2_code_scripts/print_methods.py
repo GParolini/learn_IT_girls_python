@@ -6,7 +6,7 @@ Created on Thu Apr  4 23:05:36 2019
 @author: giudittaparolini
 """
 import utilities as ut
-import re
+
 
 #Get item type counts
 def itemtype_counts(df):
@@ -201,36 +201,3 @@ def jourcat_year_counts(df):
     jourcat_year_counts = df.groupby(["Category", "Publication Year"]).size()
     return jourcat_year_counts
 
-
-##########################
-#Get the length of all the txt files
-def get_length_art(df):
-    lengths = []
-    for item in df:
-        len(item)
-        length = len(item) - 1
-        lengths.append(length)
-    return lengths
-
-#Get the length of one txt file using the file name
-def get_length_art_file(my_str):
-    length = len(my_str) - 1
-    return length
-    
-
-
-##########################
-#Count the words in each paper (by counting white spaces)
-def get_whitespaces(df):
-    word_count = []
-    for item in df:
-        item_count = len(re.findall(r' +', item))
-        final_item_count = item_count + 1
-        word_count.append(final_item_count)
-    return word_count
-
-#Get words in a single file (by counting white spaces)
-def get_whitespaces_file(my_str):
-    word_count = len(re.findall(r' +', my_str))
-    final_word_count = word_count + 1
-    return final_word_count
