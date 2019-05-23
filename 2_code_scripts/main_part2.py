@@ -9,6 +9,7 @@ Created on Thu Apr  4 16:57:54 2019
 
 import pandas as pd
 import utilities as ut
+import os
 
 
 # Read the ids of the txt files in the folder papers
@@ -47,3 +48,9 @@ for file_id in file_ids:
 word_count = pd.DataFrame(d2, columns=("id", "word_count"))
 dfb = pd.merge(dfa, word_count)
 ut.print_csv_data_headers (dfb, "papers.csv")
+
+#Right join of the dataframe papers with the bibliography data used in part 1 of the project
+df = pd.read_csv(os.path.join("..", "1_data", "bibliography_data.csv"))
+merged_p1_p2 = pd.merge(left=df,right=dfb, how="right", left_on="Key", right_on="id")
+ut.print_csv_data (merged_p1_p2, "full_data.csv")
+
