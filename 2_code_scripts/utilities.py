@@ -30,7 +30,7 @@ def print_txt_printouts (to_be_printed, filename):
 def print_csv_printouts (df, filename):
     df.to_csv(os.path.join("..", "3_printouts", filename), header=None)
 
-# Pront a jpg figure in the folder 4_plots
+# Print a jpg figure in the folder 4_plots
 def print_plot (fig, filename):
     plt.savefig(os.path.join("..", "4_plots", filename))
     

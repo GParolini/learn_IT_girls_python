@@ -9,6 +9,7 @@ Created on Thu Apr  4 16:57:54 2019
 
 import pandas as pd
 import utilities as ut
+import utilities_spaCy as uts
 import os
 
 
@@ -50,7 +51,21 @@ dfb = pd.merge(dfa, word_count)
 ut.print_csv_data_headers (dfb, "papers.csv")
 
 #Right join of the dataframe papers with the bibliography data used in part 1 of the project
-df = pd.read_csv(os.path.join("..", "1_data", "bibliography_data.csv"))
+df = pd.read_csv(os.path.join("..", "1_data", "cleandata.csv"))
 merged_p1_p2 = pd.merge(left=df,right=dfb, how="right", left_on="Key", right_on="id")
 ut.print_csv_data (merged_p1_p2, "full_data.csv")
+
+#Plot the most frequent words for each paper
+spacy_ids = uts.get_spacy_id()
+for file_id in spacy_ids:
+    uts.plot_pop_words(file_id)
+    continue
+
+#Save frequent words plots
+for file_id in spacy_ids:
+    uts.save_plot_spacy(file_id)
+    continue   
+
+
+
 
