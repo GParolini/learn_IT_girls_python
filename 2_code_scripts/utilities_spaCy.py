@@ -7,37 +7,20 @@ Created on Fri May 24 20:40:55 2019
 """
 import pandas as pd
 import spacy
-import glob
 import os
-import pickle
 import matplotlib.pylab as plt
 from more_itertools import take
+import utilities as ut
+import json
 
 
 nlp = spacy.load("en_core_web_sm")
 nlp.Defaults.stop_words |= {"=","inch","+","°","p.","possible","cent","c"}
 
-#Get the id of all the txt files for the analysis with spaCy 
-def get_spacy_id():
-    all_files = glob.glob("*.txt")
-    files_ids = []
-    for my_file in all_files:
-            filename = os.path.basename(my_file)
-            file_id = os.path.splitext(filename)[0]
-            files_ids.append(file_id)     
-            continue
-    return files_ids
-
-#Read the txt files in the code folder
-def read_spacy_txt(file_id):
-    file_ext = file_id + ".txt"
-    with open (file_ext, "rt") as f: 
-            text = f.read()        
-    return text
 
 #Load each paper in spaCy using the paper id
 def load_in_spacy(file_id):
-    paper = read_spacy_txt(file_id)
+    paper = ut.read_art_txt(file_id)
     my_doc = nlp(paper)
     return my_doc
 
@@ -68,7 +51,15 @@ def my_remove(file_id):
     for myt in tokens_clean1:
         if myt.is_digit == False:
             tokens_clean2.append(myt)
-    return tokens_clean2
+    tokens_clean3 = []
+    for mytk in tokens_clean2:
+        if len(mytk) > 2:
+            tokens_clean3.append(mytk)
+    tokens_clean4 = []
+    for mytkn in tokens_clean3:
+        if "." not in mytkn:
+            tokens_clean4.append(mytkn)       
+    return tokens_clean4
 
 #Generate list of lemmas for each paper
 def get_lemmas(file_id):
@@ -98,41 +89,29 @@ def count_lemma_freq(file_id):
     lemma_counts = []
     for my_lemma in my_lemmas:
         count = my_lemmas.count(my_lemma)
-        if [my_lemma,count] not in lemma_counts:
-            lemma_counts.append([my_lemma,count])
+        if [my_lemma, count] not in lemma_counts:
+            lemma_counts.append([my_lemma, count])
             lemma_counts.sort(key = lambda x: x[1], reverse = True) 
     return lemma_counts
 
 #Generate a dictionary of the lemmas counts for each paper
 def get_lemmas_dict(file_id):
     my_lemma_counts = count_lemma_freq(file_id)
-    lemmas_dict = { k[0]: k[1:] for k in my_lemma_counts }
+    lemmas_dict = { k[0]: k[1] for k in my_lemma_counts }
     return lemmas_dict
 
 #Save the lemmas dictionary
 def save_dict_spacy(file_id):
     my_dict = get_lemmas_dict(file_id)
-    my_file_ext = file_id + ".pickle"
-    pickle_out = open(os.path.join("..", "3_printouts", "spaCy", my_file_ext),"wb")
-    pickle.dump(my_dict, pickle_out)
-    pickle_out.close()
-
-#Print the lemmas dictionary
-def print_lemma_dict(file_id):
-    my_file_ext = file_id + ".pickle"
-    pickle_in = open(os.path.join("..", "3_printouts", "spaCy", my_file_ext),"rb")
-    my_dict = pickle.load(pickle_in)
-    my_keys = my_dict.keys()
-    my_file_ext1 = "dict_" + file_id + ".txt"
-    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext1),'w') as outfile:
-        for key in my_keys:
-            print (key + ": ", my_dict[key], file=outfile)
+    my_file_ext = "word_count_" + file_id + ".txt"
+    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
+        json.dump(my_dict, outfile, indent=4)
 
 #Generate a plot of the common words (count > 5) in the lemmas dictionary
 def plot_pop_words(file_id):
-    my_file_ext = file_id + ".pickle"
-    pickle_in = open(os.path.join("..", "3_printouts", "spaCy", my_file_ext),"rb")
-    my_dict = pickle.load(pickle_in)
+    my_file_ext = "word_count_" + file_id + ".txt"
+    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext)) as json_file:  
+        my_dict = json.load(json_file)
     plot_list = take(5, my_dict.items())
     x, y = zip(*plot_list)
     plt.figure(figsize=(14,8))

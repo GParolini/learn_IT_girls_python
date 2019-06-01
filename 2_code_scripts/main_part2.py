@@ -11,6 +11,7 @@ import pandas as pd
 import utilities as ut
 import utilities_spaCy as uts
 import os
+import matplotlib.pylab as plt
 
 
 # Read the ids of the txt files in the folder papers
@@ -56,13 +57,13 @@ merged_p1_p2 = pd.merge(left=df,right=dfb, how="right", left_on="Key", right_on=
 ut.print_csv_data (merged_p1_p2, "full_data.csv")
 
 #Plot the most frequent words for each paper
-spacy_ids = uts.get_spacy_id()
-for file_id in spacy_ids:
+for file_id in file_ids:
     uts.plot_pop_words(file_id)
     continue
+    plt.close()
 
 #Save frequent words plots
-for file_id in spacy_ids:
+for file_id in file_ids:
     uts.save_plot_spacy(file_id)
     continue   
 
