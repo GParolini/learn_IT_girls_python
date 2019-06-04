@@ -57,16 +57,22 @@ merged_p1_p2 = pd.merge(left=df,right=dfb, how="right", left_on="Key", right_on=
 ut.print_csv_data (merged_p1_p2, "full_data.csv")
 
 #Plot the most frequent words for each paper
-for file_id in file_ids:
-    uts.plot_pop_words(file_id)
-    continue
-    plt.close()
+#for file_id in file_ids:
+    #uts.plot_pop_words(file_id)
+    #continue
+    #plt.close()
 
 #Save frequent words plots
-for file_id in file_ids:
-    uts.save_plot_spacy(file_id)
-    continue   
+#for file_id in file_ids:
+    #uts.save_plot_spacy(file_id)
+    #continue   
 
+tit_ids = uts.get_eng_art_id()
 
+#for file_id in tit_ids:
+    #print(uts.get_lemmas_tit_count(file_id))
 
+my_dicts = [uts.get_lemmas_tit_count_cat(file_id) for file_id in tit_ids] 
+                
+print(uts.get_global_dict_titles(my_dicts))
 
