@@ -13,6 +13,10 @@ from more_itertools import take
 import utilities as ut
 import json
 from collections import defaultdict
+from collections import Counter
+import numpy as np
+from numpy import * 
+
 #from mordecai import Geoparser
 
 
@@ -240,7 +244,6 @@ def get_lemmas_tit_count_cat(file_id):
     for my_lemma in my_lemmas:
         my_dict[art_cat].append(my_lemma)
     return my_dict
-    #for my_cat in dict_keys:
         
 def get_global_dict_titles(my_dicts):    
     dd = defaultdict(list)
@@ -249,7 +252,32 @@ def get_global_dict_titles(my_dicts):
             if value != []:
                 for item in value:
                     dd[key].append(item)
+    my_file_ext = "titles_dict" + ".txt"
+    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
+        json.dump(dd, outfile, indent = 2, separators=(',', ': '))
     return dd
+
+def get_global_dict_counts():
+    with open(os.path.join("..", "3_printouts", "spaCy", "titles_dict.txt")) as json_file:  
+        my_dict = json.load(json_file)
+    my_keys = my_dict.keys()
+    my_counts = []
+    for key in my_keys:
+        my_ct = Counter(my_dict[key])
+        my_pair = [key, my_ct]
+        my_counts.append(my_pair)
+    my_file_ext = "count_dict" + ".txt"
+    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
+        json.dump(my_counts, outfile, indent = 2, separators=(',', ': '))
+    return my_counts
+
+def get_matrix_dict_counts():
+    my_array = get_global_dict_counts()
+    print (my_array)
+    #my_matrix = reshape(my_array,(25,15))
+    #return m
+        
+        
 
     #dict.keys =
     #lemma_counts = []
