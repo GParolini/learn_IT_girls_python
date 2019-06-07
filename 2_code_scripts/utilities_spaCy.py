@@ -252,13 +252,13 @@ def get_global_dict_titles(my_dicts):
             if value != []:
                 for item in value:
                     dd[key].append(item)
-    my_file_ext = "titles_dict" + ".txt"
+    my_file_ext = "titles_dict" + ".json"
     with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
         json.dump(dd, outfile, indent = 2, separators=(',', ': '))
     return dd
 
 def get_global_dict_counts():
-    with open(os.path.join("..", "3_printouts", "spaCy", "titles_dict.txt")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "spaCy", "titles_dict.json")) as json_file:  
         my_dict = json.load(json_file)
     my_keys = my_dict.keys()
     my_counts = []
@@ -266,7 +266,7 @@ def get_global_dict_counts():
         my_ct = Counter(my_dict[key])
         my_pair = [key, my_ct]
         my_counts.append(my_pair)
-    my_file_ext = "count_dict" + ".txt"
+    my_file_ext = "count_dict" + ".json"
     with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
         json.dump(my_counts, outfile, indent = 2, separators=(',', ': '))
     return my_counts

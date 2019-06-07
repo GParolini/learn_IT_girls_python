@@ -1,9 +1,12 @@
 # OS generated files #
 ######################
-
 .DS_Store
 
 # Git generated files #
 ######################
-
 .Rhistory
+
+# Python generated files #
+######################
+*.pyc
+__pycache__
