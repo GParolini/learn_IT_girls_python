@@ -72,10 +72,20 @@ tit_ids = uts.get_eng_art_id()
 #for file_id in tit_ids:
     #print(uts.get_lemmas_tit_count(file_id))
 
-my_dicts = [uts.get_lemmas_tit_count_cat(file_id) for file_id in tit_ids] 
+#my_dicts = [uts.get_lemmas_tit_count_cat(file_id) for file_id in tit_ids] 
                 
-uts.get_global_dict_titles(my_dicts)
+#uts.get_global_dict_titles(my_dicts)
 
-uts.get_global_dict_counts()
+#uts.get_global_dict_counts()
     
 #uts.get_matrix_dict_counts()
+    
+#print(uts.get_perc_counts_word("water"))
+
+#uts.get_perc_counts_word()
+word_counts = uts.get_freq_words()
+#print(word_counts)
+
+#print (type(word_counts))
+
+#uts.get_most_freq_words(word_counts)

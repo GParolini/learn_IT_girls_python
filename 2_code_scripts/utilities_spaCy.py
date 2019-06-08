@@ -14,8 +14,10 @@ import utilities as ut
 import json
 from collections import defaultdict
 from collections import Counter
+from operator import itemgetter
 import numpy as np
 from numpy import * 
+
 
 #from mordecai import Geoparser
 
@@ -261,30 +263,126 @@ def get_global_dict_counts():
     with open(os.path.join("..", "3_printouts", "spaCy", "titles_dict.json")) as json_file:  
         my_dict = json.load(json_file)
     my_keys = my_dict.keys()
-    my_counts = []
+    big_dict = {}
     for key in my_keys:
-        my_ct = Counter(my_dict[key])
-        my_pair = [key, my_ct]
-        my_counts.append(my_pair)
+        my_counts = Counter(my_dict[key])
+        big_dict.update( {key : my_counts} )
     my_file_ext = "count_dict" + ".json"
     with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
-        json.dump(my_counts, outfile, indent = 2, separators=(',', ': '))
-    return my_counts
+        json.dump(big_dict, outfile, indent = 2, separators=(',', ': '))
+    return big_dict
 
-def get_matrix_dict_counts():
-    my_array = get_global_dict_counts()
-    print (my_array)
-    #my_matrix = reshape(my_array,(25,15))
-    #return m
-        
-        
+def get_perc_counts_word(my_word):
+    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+        big_dict = json.load(json_file)
+    tot = {}
+    for key in big_dict.keys():
+        if my_word in big_dict[key]:
+                tot.update({key : big_dict[key][my_word]})
+        else:
+            continue
+    my_sum_list =[]
+    for key in tot.keys():
+        my_sum_list.append(tot[key])
+    my_sum = sum(my_sum_list)
+    tot_norm = {}
+    for key in tot.keys():
+        norm = tot[key]/my_sum
+        per_cent = norm * 100
+        norm_r = round(per_cent, 1)
+        tot_norm.update({key : norm_r})
+    return tot_norm
 
-    #dict.keys =
-    #lemma_counts = []
-    #for my_lemma in my_lemmas:
-        #count = my_lemmas.count(my_lemma)
-        #if [my_lemma, count] not in lemma_counts:
-            #lemma_counts.append([my_lemma, count])
-            #lemma_counts.sort(key = lambda x: x[1], reverse = True) 
-    #return lemma_counts
+def get_total_counts_word(my_word):
+    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+        big_dict = json.load(json_file)
+    tot = {}
+    for key in big_dict.keys():
+        if my_word in big_dict[key]:
+                tot.update({key : big_dict[key][my_word]})
+        else:
+            continue
+    my_sum_list =[]
+    for key in tot.keys():
+        my_sum_list.append(tot[key])
+    my_sum = sum(my_sum_list)
+    print (my_word, my_sum)
+        
+def get_all_words():
+    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+        big_dict = json.load(json_file)
+    word_list_cat = []
+    for key in big_dict.keys():
+        for my_word in big_dict[key]:
+            if my_word not in word_list_cat:
+                word_list_cat.append(my_word)
+            else:
+                continue
+    return word_list_cat
+
+def get_freq_words():
+    word_list = get_all_words()
+    for word in word_list:
+        word_count = get_total_counts_word(word)
+        if word_count is not None and word_count >= 1:
+            d = {word: "word_count"}
+            print( d)
+
+def get_most_freq_words(lis):
+    for item in lis:
+        
+        print (item[0])
+           
+        
+        #if pair[1]>integ:
+            #print(pair)
+    
+   
+    #my_sum_list =[]
+    #for key in tot.keys():
+        #my_sum_list.append(tot[key])
+    #my_sum = sum(my_sum_list)
+    #count_dict = {word: my_sum for word in word_list}
+    #print(count_dict)
+    
+    #dd = defaultdict(list)
+    #for d in freq_dict:
+        #for key, value in d.items():
+            #if value != []:
+                #for item in value:
+                    #dd[key].append(item)
+        #print(freq_dict)
+        #    #if word in big_dict[key]:
+                #word_count = big_dict[key][word]
+                #freq_dict.update({word : word_count})
+        #print(freq_dict)
+    #freq_word.append(word_count)
+    #print(freq_word)
+                #if sum(freq_word) > 300:
+                    #print(word) + print (freq_word)
+                #else:
+                    #continue
+        #print(tot)
+        #my_sum_list =[]
+        #for key in tot.keys():
+            #my_sum_list.append(tot[key])
+        #my_sum = sum(my_sum_list)
+        #if my_sum >100:
+            #value = get_perc_counts_word(word)
+            #freq_word.update({word : value})
+    #return freq_word
+    
+    #for word in  word_list_cat:
+        #if word not in word_list:
+            #word_list.append(word)
+        #else:
+                #continue
+    #return (word_list)
+            #my_word_freq = get_perc_counts_word(my_word)
+            #if my_word not in word_dict.keys():
+                #word_dict.update({my_word : my_word_freq}) 
+    #return word_dict
+
+
+
     
