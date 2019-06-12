@@ -6,15 +6,15 @@ Created on Thu May 30 00:13:56 2019
 @author: giudittaparolini
 """
 
-import utilities as ut
-import utilities_spaCy as uts
+import utilities_part1 as ut
+import utilities_part2 as uts
 import spacy
 
 
 nlp = spacy.load("en_core_web_sm")
 
 #Get the file ids
-spacy_ids = ut.read_art_id()
+spacy_ids = uts.read_art_id()
 
 #Get tokens
 #for file_id in spacy_ids:

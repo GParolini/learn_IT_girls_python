@@ -9,9 +9,11 @@ import pandas as pd
 import spacy
 import os
 import matplotlib.pylab as plt
+import glob
+import re
 import itertools
 from more_itertools import take
-import utilities as ut
+import utilities_part1 as ut
 import json
 from collections import defaultdict
 from collections import Counter
@@ -20,16 +22,52 @@ import numpy as np
 from numpy import * 
 
 
-#from mordecai import Geoparser
-
-
 nlp = spacy.load("en_core_web_sm")
 nlp.Defaults.stop_words |= {"=","inch","+","°","p.","possible","cent","c"}
 
 
+##########################
+# Methods for reading text files, get their length (as string), count the number of words
+
+#Read the id of all the txt files in a folder
+def read_art_id():
+    all_files = glob.glob("../1_data/papers/*.txt")
+    files_ids = []
+    for my_file in all_files:
+            filename = os.path.basename(my_file)
+            file_id = os.path.splitext(filename)[0]
+            files_ids.append(file_id)
+            continue
+    return (files_ids)
+
+#Read a single txt file using the file id    
+def read_art_txt(file_id):
+    file_ext = file_id + ".txt"
+    with open (os.path.join("..", "1_data","papers", file_ext), "rt") as f: 
+            text = f.read()
+    return (text)
+
+#Count the length of a txt file
+def get_length_art_file(file_id):
+    file_txt = read_art_txt(file_id)
+    length = len(file_txt) - 1
+    return length  
+
+#Get words in a txt file (by counting white spaces)
+def get_whitespaces_file(file_id):
+    file_txt = read_art_txt(file_id)
+    word_count = len(re.findall(r' +', file_txt))
+    final_word_count = word_count + 1
+    return final_word_count
+
+
+##########################
+# Methods for loading the full text of the extracted papers into spacy, getting tokens and lemmas, cleaning them, remove stopwords, count the occurrence of lemmas, generate a plot of the most common lemmas and save them, use name-entity recognition to individuate geographical names
+
+
 #Load each paper in spaCy using the paper id
 def load_in_spacy(file_id):
-    paper = ut.read_art_txt(file_id)
+    paper = read_art_txt(file_id)
     my_doc = nlp(paper)
     return my_doc
 
@@ -63,11 +101,7 @@ def my_remove(file_id):
     tokens_clean3 = []
     for mytk in tokens_clean2:
         if len(mytk) > 2:
-            tokens_clean3.append(mytk)
-    #tokens_clean4 = []
-    #for mytkn in tokens_clean3:
-        #if "." not in mytkn:
-            #tokens_clean4.append(mytkn)       
+            tokens_clean3.append(mytk) 
     return tokens_clean3
 
 #Generate list of lemmas for each paper
@@ -113,13 +147,13 @@ def get_lemmas_dict(file_id):
 def save_dict_spacy(file_id):
     my_dict = get_lemmas_dict(file_id)
     my_file_ext = "word_count_" + file_id + ".json"
-    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
         json.dump(my_dict, outfile, indent=4)
 
 #Generate a plot of the common words (count > 5) in the lemmas dictionary
 def plot_pop_words(file_id):
     my_file_ext = "word_count_" + file_id + ".json"
-    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext)) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", my_file_ext)) as json_file:  
         my_dict = json.load(json_file)
     plot_list = take(5, my_dict.items())
     x, y = zip(*plot_list)
@@ -133,11 +167,11 @@ def plot_pop_words(file_id):
 def save_plot_spacy(file_id):
     fig = plot_pop_words(file_id)
     my_file_ext_p = file_id + ".pdf"
-    plt.savefig(os.path.join("..", "4_plots", "spaCy_plots", my_file_ext_p))
+    plt.savefig(os.path.join("..", "4_plots", "part2", "spaCy_plots", my_file_ext_p))
 
 #Get geographical names
 def get_places(file_id):
-    paper = ut.read_art_txt(file_id)
+    paper = read_art_txt(file_id)
     my_doc = nlp(paper)
     #entities = []
     for ent in my_doc.ents:
@@ -145,8 +179,10 @@ def get_places(file_id):
             print(ent.text)
 
 ##########################
-#Read titles
+# Methods for working with the title of the English articles in the bibliography data, associate it with the article category, count the most frequent lemmas across all categories and a in a specific category and plot them
 
+
+#Get all the journal articles in English from the original data
 def get_eng_art_id():
     df = pd.read_csv(os.path.join("..", "1_data", "df_jour_cat.csv"))
     df_not_eng = df[df["Language"] != "English"]
@@ -154,23 +190,27 @@ def get_eng_art_id():
     file_ids = df_eng["Key"]
     return file_ids
 
+#Gets the category corresponding to the file_id
 def get_eng_art_cat(file_id):
     df = pd.read_csv(os.path.join("..", "1_data", "df_jour_cat.csv"))
     cat = df[df["Key"] == file_id]['Category'].values
     my_cat = ''.join([str(elem) for elem in cat])
     return my_cat
 
+#Gets the title corresponding to the file_id
 def get_eng_art_title(file_id):
     df = pd.read_csv(os.path.join("..", "1_data", "df_jour_cat.csv"))
     title = df[df["Key"] == file_id]['Title'].values
     my_title = ''.join([str(elem) for elem in title])
     return my_title
 
+#Reads the title corresponding to the file_id in spacy
 def read_eng_tit_spacy(file_id):
     my_title = get_eng_art_title(file_id)
     my_doc = nlp(my_title)
     return my_doc
 
+#Get the tokes for the title corresponding to the file_id
 def get_eng_tit_tok(file_id):
     my_doc = read_eng_tit_spacy(file_id)
     my_tokens = []
@@ -178,6 +218,7 @@ def get_eng_tit_tok(file_id):
         my_tokens.append(my_token)
     return my_tokens
 
+#Clean the title tokens removing punctuations, new lines, spaces, digits, short words
 def get_eng_tit_tok_clean(file_id):
     my_tokens = get_eng_tit_tok(file_id)
     tokens_no_punct = []
@@ -201,7 +242,8 @@ def get_eng_tit_tok_clean(file_id):
         if len(mytk) > 2:
             tokens_clean3.append(mytk)
     return tokens_clean3
-        
+  
+#Get the lemmas in the title of a file after removing stopwords and pronouns    
 def get_lemmas_tit(file_id): 
     my_tokens = get_eng_tit_tok_clean(file_id)
     my_lemmas = []
@@ -218,6 +260,7 @@ def get_lemmas_tit(file_id):
             lemmas_clean_fin.append(my_lem)
     return lemmas_clean_fin
 
+#Count the occurrence of lemmas in the title of a file
 def get_lemmas_tit_count(file_id): 
     my_lemmas = get_lemmas_tit(file_id)
     lemma_counts = []
@@ -228,8 +271,9 @@ def get_lemmas_tit_count(file_id):
             lemma_counts.sort(key = lambda x: x[1], reverse = True) 
     return lemma_counts
 
+#Counts the occurrence of the lemmas in each category
 def get_lemmas_tit_count_cat(file_id): 
-    df = pd.read_csv(os.path.join("..", "3_printouts", "jourcat_counts.csv"), names=["Category", "Count"])
+    df = pd.read_csv(os.path.join("..", "3_printouts", "part1", "jourcat_counts.csv"), names=["Category", "Count"])
     my_dict = {}
     my_cat = df["Category"].values
     for cat in my_cat:
@@ -239,7 +283,8 @@ def get_lemmas_tit_count_cat(file_id):
     for my_lemma in my_lemmas:
         my_dict[art_cat].append(my_lemma)
     return my_dict
-        
+
+#Counts the occurrence of the lemmas in each category and saves it in a json file       
 def get_global_dict_titles(my_dicts):    
     dd = defaultdict(list)
     for d in my_dicts:
@@ -248,12 +293,13 @@ def get_global_dict_titles(my_dicts):
                 for item in value:
                     dd[key].append(item)
     my_file_ext = "titles_dict" + ".json"
-    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
         json.dump(dd, outfile, indent = 2, separators=(',', ': '))
     return dd
 
+#Counts the occurrence of the lemmas in each category and saves it in a json file
 def get_global_dict_counts():
-    with open(os.path.join("..", "3_printouts", "spaCy", "titles_dict.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "titles_dict.json")) as json_file:  
         my_dict = json.load(json_file)
     my_keys = my_dict.keys()
     big_dict = {}
@@ -261,12 +307,13 @@ def get_global_dict_counts():
         my_counts = Counter(my_dict[key])
         big_dict.update( {key : my_counts} )
     my_file_ext = "count_dict" + ".json"
-    with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
         json.dump(big_dict, outfile, indent = 2, separators=(',', ': '))
     return big_dict
 
+#Generate a dictionary where categories are keys and the counts of the given word in that category are given as percentages
 def get_perc_counts_word(my_word):
-    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "count_dict.json")) as json_file:  
         big_dict = json.load(json_file)
     tot = {}
     for key in big_dict.keys():
@@ -286,8 +333,9 @@ def get_perc_counts_word(my_word):
         tot_norm.update({key : norm_r})
     return tot_norm
 
+#Generate a list of unique lemmas across all categories
 def get_all_words():
-    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "count_dict.json")) as json_file:  
         big_dict = json.load(json_file)
     word_list_cat = []
     for key in big_dict.keys():
@@ -298,8 +346,9 @@ def get_all_words():
                 continue
     return word_list_cat
 
+#Get the counts (as integer) for a given word across all categories
 def get_total_counts_word(my_word):
-    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "count_dict.json")) as json_file:  
         big_dict = json.load(json_file)
     tot = {}
     for key in big_dict.keys():
@@ -313,8 +362,9 @@ def get_total_counts_word(my_word):
     my_sum = sum(my_sum_list)
     return (my_word, my_sum)
 
+#Get the counts (as integer and as per cent of all the words in the category) for a given word and a given category
 def get_total_counts_word_cat(my_word, my_cat):
-    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "count_dict.json")) as json_file:  
         big_dict = json.load(json_file)
         if my_word in big_dict[my_cat]:
                 my_count = big_dict[my_cat][my_word]
@@ -326,7 +376,7 @@ def get_total_counts_word_cat(my_word, my_cat):
     rounded = round(my_percent, 3)
     return (my_cat, my_word, my_count, rounded)
         
-
+#Generate a dictionary of the most frequent words across all categories. The value num allows to select the required interval as a threshold on the number of counts
 def get_freq_words(num):
     word_list = get_all_words()
     frequent_words =[]
@@ -342,11 +392,20 @@ def get_freq_words(num):
                 frequent_words[j]= frequent_words[j + 1] 
                 frequent_words[j + 1]= tempo
     frequent_dict = { k[0]: k[1] for k in frequent_words }
-    return frequent_dict 
+    return frequent_dict
+
+#Generate a bar plot of the most frequent words across all categories
+def plot_freq_words_title(num):
+    my_dict = get_freq_words(num)
+    plot_list = my_dict.items()
+    x, y = zip(*plot_list)
+    plt.figure(figsize=(14,20))
+    plt.barh(x, y)
 
 
+#Get the most frequent words for a specific category and a set threshold (num)
 def get_freq_words_cat(my_cat, my_num):
-    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "count_dict.json")) as json_file:  
         big_dict = json.load(json_file)
     word_list_cat = []
     for any_word in big_dict[my_cat]:
@@ -365,16 +424,19 @@ def get_freq_words_cat(my_cat, my_num):
                 frequent_words[j + 1]= tempo
     print(frequent_words)
     top_num = frequent_words[: my_num]
-    return top_num
+    frequent_cat_dict = { k[0]: k[1] for k in top_num }
+    return frequent_cat_dict
 
-
-
-def plot_freq_words_title(num):
-    my_dict = get_freq_words(num)
+#Generate a bar plot of the most frequent words in a specific category
+def plot_cat_freq_words_title(my_cat, my_num):
+    my_dict = get_freq_words_cat(my_cat, my_num)
     plot_list = my_dict.items()
     x, y = zip(*plot_list)
     plt.figure(figsize=(14,20))
     plt.barh(x, y)
+
+
+
 
 
 

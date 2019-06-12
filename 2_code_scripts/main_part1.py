@@ -6,13 +6,23 @@ Created on Thu Apr  4 16:57:54 2019
 @author: giudittaparolini
 """
 
+""" 
+Main script for Part 1.
+The data in the bibliography are pre-processed using the data_methods and a clean dataset is generated (cleandata.csv).
+To inspect the data, lists of item types (e.g. book, report) and counts are generated.
+The code generates lists/plots of item titles for each item type, authors (both tuples of co-authors and a sorted list with all the individual author names), number of publications for each author, counts of the publication language, co-authorship groups, associations between journal and categories through a list provided in 1_data, publications per category per year, etc. The methods for generating printouts and plots are in print_methods_part1 and plot_methods_part1.
+All the printouts are in 3_printouts/part1 (except the csv where the clean dataset restricted to journals is associated with the journal category, which is in 1_data), all the plots in 4_plots/part1.
+"""
+
+
+
+
 import pandas as pd
 import os
-import data_methods as dm
-import print_methods as pr
-import plot_methods as pl
-import utilities as ut
-#import pickle
+import data_methods_part1 as dm
+import print_methods_part1 as pr
+import plot_methods_part1 as pl
+import utilities_part1 as ut
 
 
 
@@ -107,8 +117,6 @@ coauthors_dict = pr.get_dict_coauthors(authors,co_authors_unique)
 coauthors_dict_clean = pr.get_dict_clean(coauthors_dict)
 ut.save_dict(coauthors_dict_clean)
 ut.print_coaut_dict("coauthors_dict.pickle", "my_coauthors.txt")
-#print(coauthors_dict_clean)
-#ut.print_txt_printouts (co_authors_unique, "coauthors_unique.txt")
 
 #Plot the histogram of the publications per year and save it in 4_plots
 fig2 = pl.hist_pub_year(df)

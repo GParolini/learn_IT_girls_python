@@ -5,7 +5,7 @@ Created on Thu Apr  4 23:05:36 2019
 
 @author: giudittaparolini
 """
-import utilities as ut
+import utilities_part1 as ut
 
 
 #Get item type counts
@@ -44,20 +44,6 @@ def get_journal_titles(df):
     sorted_titles = sorted(titles_unique)
     return sorted_titles
 
-#count articles for each journal
-def get_art_count_per_journal(df):
-    articles = df.loc[df["Item Type"] == "journalArticle"]
-    count_per_j = articles["Publication Title"].value_counts()
-    return count_per_j
-
-#list authors for each journal
-#def get_authors_per_journal(df):
-    #articles = df.loc[df["Item Type"] == "journalArticle"]
-    #articles_not_anon = articles["Author"].dropna()
-    #authors_grouped = articles_not_anon[articles_not_anon["Author"]].groupby("Publication Title")
-    #authors = authors_grouped["Author"].unique()
-    #return authors
-
 #magazines
 def get_magazine_titles(df):
     articles = df.loc[df["Item Type"] == "magazineArticle"]
@@ -84,6 +70,13 @@ def get_book_titles(df):
     titles_unique = list(set(titles1))
     sorted_titles = sorted(titles_unique)
     return sorted_titles
+
+
+#Count articles for each journal
+def get_art_count_per_journal(df):
+    articles = df.loc[df["Item Type"] == "journalArticle"]
+    count_per_j = articles["Publication Title"].value_counts()
+    return count_per_j
 
 #Get first authors
 def get_first_authors(df):
@@ -123,7 +116,7 @@ def get_multiauthors(my_list):
             continue
     return new_list
 
-#Get co_authors nested   
+#Get list of co_authors as nested list
 def get_coauthors_nested(coauthors, authors):
     all_coauthors = []
   
@@ -141,12 +134,14 @@ def get_coauthors_nested(coauthors, authors):
         all_coauthors_final = [x for x in all_coauthors if x != []]
         
     return all_coauthors_final
-        
+
+#Delete from the nested list of co_authors the first element (correspodning to the author whose coauthors are listed in the sublist)       
 def get_coauthors_pop(coauthors_nested):
     for my_list in coauthors_nested:
         my_list.pop(0)
     return coauthors_nested
 
+#Flatten the nested list of co-authors 
 def get_coauthors_flatten(lis):
     new_lis = []
     
@@ -162,6 +157,7 @@ def get_coauthors_flatten(lis):
         
     return new_lis
 
+#Generate a list of unique co-authors 
 def get_coauthors_unique(lis):
     new_lis = []
     
@@ -170,6 +166,7 @@ def get_coauthors_unique(lis):
     
     return new_lis
 
+#Generate a list of the authors to pair with the above co-authors
 def get_pop_author(mylist):
     author_list = []
     for item in mylist:
@@ -181,10 +178,12 @@ def get_pop_author(mylist):
     
     return flat_list
 
+#Generate a dictionary to store the pairs author-co-authors
 def get_dict_coauthors(authors, co_authors):
     my_dict = dict(zip(authors, co_authors))
     return my_dict
 
+#Remove the name of the author itself from the list of the co-authors
 def get_dict_clean(my_dict):
     for x in my_dict:
         my_dict[x].remove(x)

@@ -1,7 +1,0 @@
-bookSection
-report
-newspaperArticle
-thesis
-magazineArticle
-journalArticle
-book
