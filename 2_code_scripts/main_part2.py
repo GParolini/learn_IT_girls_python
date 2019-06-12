@@ -12,6 +12,7 @@ import utilities as ut
 import utilities_spaCy as uts
 import os
 import matplotlib.pylab as plt
+import numpy as np
 
 
 # Read the ids of the txt files in the folder papers
@@ -83,9 +84,26 @@ tit_ids = uts.get_eng_art_id()
 #print(uts.get_perc_counts_word("water"))
 
 #uts.get_perc_counts_word()
-word_counts = uts.get_freq_words()
+#word_counts = uts.get_freq_words()
+#
 #print(word_counts)
 
 #print (type(word_counts))
 
 #uts.get_most_freq_words(word_counts)
+
+#words = uts.get_all_words()
+
+#for word in words:
+    #print(uts.get_total_counts_word(word))
+
+#print(uts.get_all_words()  ) 
+#print(uts.get_freq_words())
+#all_words = uts.get_freq_words()
+#print(all_words)
+    
+#print(uts.get_freq_words(50))
+#uts.plot_freq_words_title(20)
+    
+print(uts.get_total_counts_word_cat("plant", "Gardening"))
+print(uts.get_freq_words_cat("Gardening", 5))

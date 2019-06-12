@@ -9,6 +9,7 @@ import pandas as pd
 import spacy
 import os
 import matplotlib.pylab as plt
+import itertools
 from more_itertools import take
 import utilities as ut
 import json
@@ -111,13 +112,13 @@ def get_lemmas_dict(file_id):
 #Save the lemmas dictionary
 def save_dict_spacy(file_id):
     my_dict = get_lemmas_dict(file_id)
-    my_file_ext = "word_count_" + file_id + ".txt"
+    my_file_ext = "word_count_" + file_id + ".json"
     with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext), 'w') as outfile:  
         json.dump(my_dict, outfile, indent=4)
 
 #Generate a plot of the common words (count > 5) in the lemmas dictionary
 def plot_pop_words(file_id):
-    my_file_ext = "word_count_" + file_id + ".txt"
+    my_file_ext = "word_count_" + file_id + ".json"
     with open(os.path.join("..", "3_printouts", "spaCy", my_file_ext)) as json_file:  
         my_dict = json.load(json_file)
     plot_list = take(5, my_dict.items())
@@ -142,14 +143,6 @@ def get_places(file_id):
     for ent in my_doc.ents:
         if ent.label_ == 'GPE':
             print(ent.text)
-    #flat_list = ut.flatten(entities)
-    #print(flat_list)
-        #flat_list.append(my_list) 
-    #list(set(flat_list))
-    #print(flat_list)
-    #list(set(entities))
-            #print((ent.text, ent.label_))
-    #print(entities)
 
 ##########################
 #Read titles
@@ -289,9 +282,21 @@ def get_perc_counts_word(my_word):
     for key in tot.keys():
         norm = tot[key]/my_sum
         per_cent = norm * 100
-        norm_r = round(per_cent, 1)
+        norm_r = round(per_cent, 3)
         tot_norm.update({key : norm_r})
     return tot_norm
+
+def get_all_words():
+    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+        big_dict = json.load(json_file)
+    word_list_cat = []
+    for key in big_dict.keys():
+        for my_word in big_dict[key]:
+            if my_word not in word_list_cat:
+                word_list_cat.append(my_word)
+            else:
+                continue
+    return word_list_cat
 
 def get_total_counts_word(my_word):
     with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
@@ -306,82 +311,72 @@ def get_total_counts_word(my_word):
     for key in tot.keys():
         my_sum_list.append(tot[key])
     my_sum = sum(my_sum_list)
-    print (my_word, my_sum)
+    return (my_word, my_sum)
+
+def get_total_counts_word_cat(my_word, my_cat):
+    with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
+        big_dict = json.load(json_file)
+        if my_word in big_dict[my_cat]:
+                my_count = big_dict[my_cat][my_word]
+    my_sum_list =[]
+    for any_word in big_dict[my_cat]:
+        my_sum_list.append(big_dict[my_cat][any_word])
+    my_sum = sum(my_sum_list)
+    my_percent = my_count/my_sum
+    rounded = round(my_percent, 3)
+    return (my_cat, my_word, my_count, rounded)
         
-def get_all_words():
+
+def get_freq_words(num):
+    word_list = get_all_words()
+    frequent_words =[]
+    for word in word_list:
+        count = get_total_counts_word(word)
+        if count[1] >= num:
+            frequent_words.append([word, count[1]])
+    l = len(frequent_words) 
+    for i in range(0, l): 
+        for j in range(0, l-i-1): 
+            if (frequent_words[j][1] < frequent_words[j + 1][1]): 
+                tempo = frequent_words[j] 
+                frequent_words[j]= frequent_words[j + 1] 
+                frequent_words[j + 1]= tempo
+    frequent_dict = { k[0]: k[1] for k in frequent_words }
+    return frequent_dict 
+
+
+def get_freq_words_cat(my_cat, my_num):
     with open(os.path.join("..", "3_printouts", "spaCy", "count_dict.json")) as json_file:  
         big_dict = json.load(json_file)
     word_list_cat = []
-    for key in big_dict.keys():
-        for my_word in big_dict[key]:
-            if my_word not in word_list_cat:
-                word_list_cat.append(my_word)
-            else:
-                continue
-    return word_list_cat
+    for any_word in big_dict[my_cat]:
+        if any_word not in word_list_cat:
+            word_list_cat.append(any_word)
+    frequent_words = []
+    for my_word in word_list_cat:
+        my_count = big_dict[my_cat][my_word]
+        frequent_words.append([my_word, my_count])
+    l = len(frequent_words) 
+    for i in range(0, l): 
+        for j in range(0, l-i-1): 
+            if (frequent_words[j][1] < frequent_words[j + 1][1]): 
+                tempo = frequent_words[j] 
+                frequent_words[j]= frequent_words[j + 1] 
+                frequent_words[j + 1]= tempo
+    print(frequent_words)
+    top_num = frequent_words[: my_num]
+    return top_num
 
-def get_freq_words():
-    word_list = get_all_words()
-    for word in word_list:
-        word_count = get_total_counts_word(word)
-        if word_count is not None and word_count >= 1:
-            d = {word: "word_count"}
-            print( d)
 
-def get_most_freq_words(lis):
-    for item in lis:
-        
-        print (item[0])
-           
-        
-        #if pair[1]>integ:
-            #print(pair)
-    
-   
-    #my_sum_list =[]
-    #for key in tot.keys():
-        #my_sum_list.append(tot[key])
-    #my_sum = sum(my_sum_list)
-    #count_dict = {word: my_sum for word in word_list}
-    #print(count_dict)
-    
-    #dd = defaultdict(list)
-    #for d in freq_dict:
-        #for key, value in d.items():
-            #if value != []:
-                #for item in value:
-                    #dd[key].append(item)
-        #print(freq_dict)
-        #    #if word in big_dict[key]:
-                #word_count = big_dict[key][word]
-                #freq_dict.update({word : word_count})
-        #print(freq_dict)
-    #freq_word.append(word_count)
-    #print(freq_word)
-                #if sum(freq_word) > 300:
-                    #print(word) + print (freq_word)
-                #else:
-                    #continue
-        #print(tot)
-        #my_sum_list =[]
-        #for key in tot.keys():
-            #my_sum_list.append(tot[key])
-        #my_sum = sum(my_sum_list)
-        #if my_sum >100:
-            #value = get_perc_counts_word(word)
-            #freq_word.update({word : value})
-    #return freq_word
-    
-    #for word in  word_list_cat:
-        #if word not in word_list:
-            #word_list.append(word)
-        #else:
-                #continue
-    #return (word_list)
-            #my_word_freq = get_perc_counts_word(my_word)
-            #if my_word not in word_dict.keys():
-                #word_dict.update({my_word : my_word_freq}) 
-    #return word_dict
+
+def plot_freq_words_title(num):
+    my_dict = get_freq_words(num)
+    plot_list = my_dict.items()
+    x, y = zip(*plot_list)
+    plt.figure(figsize=(14,20))
+    plt.barh(x, y)
+
+
 
 
 
