@@ -155,19 +155,21 @@ def plot_pop_words(file_id):
     my_file_ext = "word_count_" + file_id + ".json"
     with open(os.path.join("..", "3_printouts", "part2", my_file_ext)) as json_file:  
         my_dict = json.load(json_file)
-    plot_list = take(5, my_dict.items())
-    x, y = zip(*plot_list)
+    plot_list = {k: my_dict[k] for k in list(my_dict.keys())[:5]}
+    plt.bar(range(len(plot_list)), list(plot_list.values()), align='center')
+    plt.xticks(range(len(plot_list)), list(plot_list.keys()))
     plt.figure(figsize=(14,8))
     df = pd.read_csv(os.path.join("..", "1_data", "full_data.csv"))
     paper_title = df[df['id']==file_id]['Title'].values
     plt.suptitle(str(paper_title), fontsize=10)
-    plt.plot(x, y)
+    plt.close()
+    
 
 #Save the plot of the common words
 def save_plot_spacy(file_id):
     fig = plot_pop_words(file_id)
     my_file_ext_p = file_id + ".pdf"
-    plt.savefig(os.path.join("..", "4_plots", "part2", "spaCy_plots", my_file_ext_p))
+    plt.savefig(os.path.join("..", "4_plots", "part2", my_file_ext_p))
 
 #Get geographical names
 def get_places(file_id):
@@ -434,6 +436,12 @@ def plot_cat_freq_words_title(my_cat, my_num):
     x, y = zip(*plot_list)
     plt.figure(figsize=(14,20))
     plt.barh(x, y)
+
+#Print to a txt file in the folder 3_printouts/part_2
+def print_txt_printouts (to_be_printed, filename):
+    with open(os.path.join("..", "3_printouts","part2", filename),'w') as outfile:
+        for item in to_be_printed:
+            print(item, file=outfile)
 
 
 

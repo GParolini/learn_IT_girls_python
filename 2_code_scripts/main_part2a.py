@@ -12,19 +12,19 @@ import utilities_part1 as ut
 import utilities_part2 as uts
 import os
 import matplotlib.pylab as plt
-import numpy as np
+import spacy
 
+#Load spacy English model
+nlp = spacy.load("en_core_web_sm")
 
 # Read the ids of the txt files in the folder papers
 file_ids = uts.read_art_id()
-
 
 # Read the text of the files one by one and collect them in a dataframe adding the column id
 d = []
 for file_id in file_ids:
     file_txt = uts.read_art_txt(file_id)
     d.append([file_id, file_txt])
-
 
 # Print the dataframe in a csv with column headers
 papers = pd.DataFrame(d, columns=("id", "text"))
@@ -57,6 +57,21 @@ df = pd.read_csv(os.path.join("..", "1_data", "cleandata.csv"))
 merged_p1_p2 = pd.merge(left=df,right=dfb, how="right", left_on="Key", right_on="id")
 ut.print_csv_data (merged_p1_p2, "full_data.csv")
 
+#Generate dictionary
+for file_id in file_ids:
+    uts.get_lemmas_dict(file_id)
+    continue
+
+#Save dictionary
+for file_id in file_ids:
+    uts.save_dict_spacy(file_id)
+    continue
+
+#Get geographical names
+for file_id in file_ids:
+    uts.get_places(file_id)
+    continue
+
 #Plot the most frequent words for each paper
 for file_id in file_ids:
     uts.plot_pop_words(file_id)
@@ -67,40 +82,3 @@ for file_id in file_ids:
 for file_id in file_ids:
     uts.save_plot_spacy(file_id)
     continue   
-
-tit_ids = uts.get_eng_art_id()
-
-for file_id in tit_ids:
-    print(uts.get_lemmas_tit_count(file_id))
-
-my_dicts = [uts.get_lemmas_tit_count_cat(file_id) for file_id in tit_ids] 
-                
-uts.get_global_dict_titles(my_dicts)
-
-uts.get_global_dict_counts()
-    
-    
-print(uts.get_perc_counts_word("water"))
-
-uts.get_perc_counts_word()
-word_counts = uts.get_freq_words()
-
-print(word_counts)
-
-uts.get_most_freq_words(word_counts)
-
-words = uts.get_all_words()
-
-for word in words:
-    print(uts.get_total_counts_word(word))
-
-print(uts.get_all_words()  ) 
-print(uts.get_freq_words())
-all_words = uts.get_freq_words()
-print(all_words)
-    
-print(uts.get_freq_words(50))
-uts.plot_freq_words_title(20)
-    
-print(uts.get_total_counts_word_cat("plant", "Gardening"))
-print(uts.get_freq_words_cat("Gardening", 5))
