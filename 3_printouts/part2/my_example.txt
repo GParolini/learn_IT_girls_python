@@ -1,0 +1,6 @@
+('Agriculture', 'temperature', 84, 3.762)
+('Meteorology', 'temperature', 17, 2.033)
+('Agriculture', 'plant', 39, 1.747)
+('Meteorology', 'plant', 5, 0.598)
+None
+None

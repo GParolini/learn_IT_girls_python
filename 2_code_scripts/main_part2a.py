@@ -72,13 +72,9 @@ for file_id in file_ids:
     uts.get_places(file_id)
     continue
 
-#Plot the most frequent words for each paper
+#Plot the most frequent words for each paper and save them in 4_plots/part2
 for file_id in file_ids:
     uts.plot_pop_words(file_id)
-    continue
     plt.close()
+    continue
 
-#Save frequent words plots
-for file_id in file_ids:
-    uts.save_plot_spacy(file_id)
-    continue   
