@@ -5,6 +5,12 @@ Created on Thu Apr  4 16:57:54 2019
 
 @author: giudittaparolini
 """
+""" 
+Main script for Part 2/c (data mining of the global lemmas dictionary generated in Part 2/b).
+The script calls methods for generating a list of unique lemmas across all categories, get counts and percentages for specific lemmas, generate dictionarries of the most common lemmas in a specific category and across all categories, and print the related plots. All the printouts are in 3_printouts/part2/c, the plots in 4_plots/part2/c. All the methods used by this main script are in utilities_part2.
+"""
+
+
 
 import utilities_part2 as uts
 

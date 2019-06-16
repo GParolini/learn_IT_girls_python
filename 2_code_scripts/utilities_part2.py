@@ -5,6 +5,11 @@ Created on Fri May 24 20:40:55 2019
 
 @author: giudittaparolini
 """
+
+""" 
+The file includes all the methods used by the main scripts for part2.
+"""
+
 import pandas as pd
 import spacy
 import os
@@ -142,13 +147,13 @@ def get_lemmas_dict(file_id):
 def save_dict_spacy(file_id):
     my_dict = get_lemmas_dict(file_id)
     my_file_ext = "word_count_" + file_id + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", "a", my_file_ext), 'w') as outfile:  
         json.dump(my_dict, outfile, indent=4)
 
 #Generate a plot of the common words (count > 5) in the lemmas dictionary for each paper
 def plot_pop_words(file_id):
     my_file_ext = "word_count_" + file_id + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext)) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "a", my_file_ext)) as json_file:  
         my_dict = json.load(json_file)
     df = pd.read_csv(os.path.join("..", "1_data", "full_data.csv"))
     paper_title = df[df['id']==file_id]['Title'].values
@@ -158,17 +163,38 @@ def plot_pop_words(file_id):
     plt.figure(figsize=(14,8))
     plt.close()
     my_file_ext_p = file_id + ".pdf"
-    plt.savefig(os.path.join("..", "4_plots", "part2", my_file_ext_p))
+    plt.savefig(os.path.join("..", "4_plots", "part2", "a", my_file_ext_p))
     return
 
 #Get geographical names
 def get_places(file_id):
     paper = read_art_txt(file_id)
     my_doc = nlp(paper)
-    #entities = []
+    my_places = []
     for ent in my_doc.ents:
         if ent.label_ == 'GPE':
-            print(ent.text)
+                my_places.append(ent.text)
+    clean_myplaces = []
+    for element in my_places:
+        if (element !="\n") and (element != "°"):
+            clean_myplaces.append(element)
+    return clean_myplaces
+
+#Remove duplicates and Celsius degree symbol in the list of geographical names
+def unique_places(file_id):
+    places = get_places(file_id)
+    unique_list = list(set(places))
+    return unique_list
+
+#1 Print the list of geographical names in 3_printouts/part2/a
+def print_geo_names (file_id):
+    to_be_printed = unique_places(file_id)
+    my_file_ext = file_id + "geo_names" + ".txt"
+    with open(os.path.join("..", "3_printouts","part2", "a", my_file_ext),'w') as outfile:
+        for item in to_be_printed:
+            print(item, file=outfile)
+
+         
 
 ##########################
 # Methods for working with the title of an article (English journal articles only) in the bibliography data, associate it to the article category, get lemmas, count their frequency and generate a dictionary of the results
@@ -286,13 +312,13 @@ def get_eng_art_global_lemmas_dict(my_dicts):
             for item in value:
                 dd[key].append(item)
     my_file_ext = "global_lemmas_dict" + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", my_file_ext), 'w') as outfile:  
         json.dump(dd, outfile, indent = 2, separators=(',', ': '))
     return dd
 
 #Generate a dictionary of dictionaries (one subdictionary for each journal category) with counts of the occurrence of each lemma in each category 
 def get_eng_art_global_dict_with_counts():
-    with open(os.path.join("..", "3_printouts", "part2", "global_lemmas_dict.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", "global_lemmas_dict.json")) as json_file:  
         my_dict = json.load(json_file)
     my_keys = my_dict.keys()
     big_dict = {}
@@ -300,7 +326,7 @@ def get_eng_art_global_dict_with_counts():
         my_counts = Counter(my_dict[key])
         big_dict.update( {key : my_counts} )
     my_file_ext = "global_dict_with_counts" + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", my_file_ext), 'w') as outfile:  
         json.dump(big_dict, outfile, indent = 2, separators=(',', ': '))
     return big_dict
 
@@ -311,7 +337,7 @@ def get_eng_art_global_dict_with_counts():
 
 #Generate a list of unique lemmas across all categories (alphabetical order)
 def get_all_lemmas_list():
-    with open(os.path.join("..", "3_printouts", "part2", "global_dict_with_counts.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", "global_dict_with_counts.json")) as json_file:  
         big_dict = json.load(json_file)
     word_list_cat = []
     for key in big_dict.keys():
@@ -325,7 +351,7 @@ def get_all_lemmas_list():
 
 #Print to a txt file in the folder 3_printouts/part_2
 def print_txt_printouts (to_be_printed, filename):
-    with open(os.path.join("..", "3_printouts","part2", filename),'w') as outfile:
+    with open(os.path.join("..", "3_printouts","part2", "c", filename),'w') as outfile:
         for item in to_be_printed:
             print(item, file=outfile)
 
@@ -345,11 +371,11 @@ def get_counts_lemma(my_word):
     my_sum = sum(my_sum_list)
     tot.update({"Total count" : int(my_sum)})
     my_file_ext = my_word + "_counts" + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", "c", my_file_ext), 'w') as outfile:  
         json.dump(tot, outfile, indent = 2, separators=(',', ': '))
 
 def get_counts_lemma_no_print(my_word):
-    with open(os.path.join("..", "3_printouts", "part2", "global_dict_with_counts.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", "global_dict_with_counts.json")) as json_file:  
         big_dict = json.load(json_file)
     tot = {}
     for key in big_dict.keys():
@@ -365,7 +391,7 @@ def get_counts_lemma_no_print(my_word):
 
 #For a given word, get the percentage corresponding to the counts of that word in each category. The result is returned as a dictionary with categories as keys and percentages as values. The result is printed in a json file
 def get_perc_counts_lemma(my_word):
-    with open(os.path.join("..", "3_printouts", "part2", "global_dict_with_counts.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", "global_dict_with_counts.json")) as json_file:  
         big_dict = json.load(json_file)
     tot = {}
     for key in big_dict.keys():
@@ -383,13 +409,13 @@ def get_perc_counts_lemma(my_word):
         per_cent = norm * 100
         tot_norm.update({key : per_cent})
     my_file_ext = my_word + "_perc_counts" + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", "c", my_file_ext), 'w') as outfile:  
         json.dump(tot_norm, outfile, indent = 2, separators=(',', ': '))
 
 
 #Get the counts for a given word and a given category as integer and as percentage (count of that word/ sum of the counts for all the  lemmas in the category) 
 def get_both_counts_lemma_cat(my_word, my_cat):
-    with open(os.path.join("..", "3_printouts", "part2", "global_dict_with_counts.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", "global_dict_with_counts.json")) as json_file:  
         big_dict = json.load(json_file)
     my_sum_list =[]
     for any_word in big_dict[my_cat]:
@@ -418,7 +444,7 @@ def get_freq_lemmas(num):
                 frequent_words[j + 1]= tempo
     frequent_dict = { k[0]: k[1] for k in frequent_words }
     my_file_ext = str(num) + "_frequent_lemmas_all_cat" + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", "c", my_file_ext), 'w') as outfile:  
         json.dump(frequent_dict, outfile, indent = 2, separators=(',', ': '))
     return frequent_dict
 
@@ -430,7 +456,7 @@ def plot_freq_lemmas_title(num):
     plt.figure(figsize=(14,20))
     plt.barh(x, y)
     my_file_ext_p = str(num) + "_frequent_lemmas_all_cat" + ".pdf"
-    plt.savefig(os.path.join("..", "4_plots", "part2", my_file_ext_p))
+    plt.savefig(os.path.join("..", "4_plots", "part2", "c", my_file_ext_p))
 
 
 #Get the most frequent words (i.e. the first my_num words) in titles for a specific category
@@ -455,7 +481,7 @@ def get_freq_lemmas_title_cat(my_cat, my_num):
     top_num = frequent_words[: my_num]
     frequent_cat_dict = { k[0]: k[1] for k in top_num }
     my_file_ext = str(my_num) + "_frequent_lemmas_" + my_cat + ".json"
-    with open(os.path.join("..", "3_printouts", "part2", my_file_ext), 'w') as outfile:  
+    with open(os.path.join("..", "3_printouts", "part2", "c", my_file_ext), 'w') as outfile:  
         json.dump(frequent_cat_dict, outfile, indent = 2, separators=(',', ': '))
     return frequent_cat_dict
 
@@ -467,7 +493,7 @@ def plot_freq_lemmas_title_cat(my_cat, my_num):
     plt.figure(figsize=(14,20))
     plt.barh(x, y)
     my_file_ext_p = str(my_num) + "_frequent_lemmas_" + my_cat+ ".pdf"
-    plt.savefig(os.path.join("..", "4_plots", "part2", my_file_ext_p))
+    plt.savefig(os.path.join("..", "4_plots", "part2", "c", my_file_ext_p))
 
 
 

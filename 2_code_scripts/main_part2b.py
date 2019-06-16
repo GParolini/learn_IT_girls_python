@@ -5,7 +5,10 @@ Created on Thu Apr  4 16:57:54 2019
 
 @author: giudittaparolini
 """
-
+""" 
+Main script for Part 2/b (text analysis of the titles for all the English journal articles).
+The script generates a global dictionary of lemmas (with counts) for each category. The final dictionary is saved as a json file in 3_printouts/part2/b. All the methods used by this main script are in utilities_part2.
+"""
 
 import utilities_part2 as uts
 import spacy

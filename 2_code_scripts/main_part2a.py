@@ -3,9 +3,13 @@
 """
 Created on Thu Apr  4 16:57:54 2019
 
-@author: giudittaparolini
+@author: giudittaparolin
 """
-
+""" 
+Main script for Part 2/a (text analysis of English journal articles(full papers)).
+The text (txt file) of the articles is in 1_data/papers. Using methods in utilities_part2 the script reads the full text of all the articles (as string), count the length of the string, count the number of words. This information is merged with the original dataset (once cleaned, "clendata.csv").
+The script also loads Spacy English Model, then loads the articles in Spacy and generates a lemma dictionary (saved in 3_printouts/part2/a) with counts for each article; plots the most frequent words for each article (saved in 4_plots/part2/a); using name-entity recognition extract geographical names for each article and saves them in 3_printouts/part2/a. Name-entity recognition of geographical names with the standard spacy model is not satisfactory with my dataset.
+"""
 
 import pandas as pd
 import utilities_part1 as ut
@@ -14,8 +18,6 @@ import os
 import matplotlib.pylab as plt
 import spacy
 
-#Load spacy English model
-nlp = spacy.load("en_core_web_sm")
 
 # Read the ids of the txt files in the folder papers
 file_ids = uts.read_art_id()
@@ -57,6 +59,9 @@ df = pd.read_csv(os.path.join("..", "1_data", "cleandata.csv"))
 merged_p1_p2 = pd.merge(left=df,right=dfb, how="right", left_on="Key", right_on="id")
 ut.print_csv_data (merged_p1_p2, "full_data.csv")
 
+#Load spacy English model
+nlp = spacy.load("en_core_web_sm")
+
 #Generate dictionary
 for file_id in file_ids:
     uts.get_lemmas_dict(file_id)
@@ -67,14 +72,14 @@ for file_id in file_ids:
     uts.save_dict_spacy(file_id)
     continue
 
-#Get geographical names
-for file_id in file_ids:
-    uts.get_places(file_id)
-    continue
-
 #Plot the most frequent words for each paper and save them in 4_plots/part2
 for file_id in file_ids:
     uts.plot_pop_words(file_id)
     plt.close()
+    continue
+
+#Print geographical names and save them in 3_printouts/part2/a
+for file_id in file_ids:
+    uts.print_geo_names(file_id)
     continue
 
