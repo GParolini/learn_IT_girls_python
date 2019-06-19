@@ -1,21 +1,21 @@
-South Sweden
-Lidforss'
-XV
-Tradescantia
-Chara
-Gorke
-Bacteria
-—14.5
-Yeast
-Begonia
-Ageratum
-Molisch
-Jena
-Pine
-XI
-Cerastium
-Stahl
 Lidforss
-Spirogyra
-Sachs
+Jena
+Lidforss'
+Begonia
+Cerastium
+XV
 —40 °C
+Spirogyra
+Stahl
+—14.5
+Bacteria
+Molisch
+XI
+Tradescantia
+Ageratum
+Gorke
+South Sweden
+Sachs
+Yeast
+Chara
+Pine

@@ -1,7 +1,7 @@
-journalArticle
-report
-thesis
-bookSection
-book
 magazineArticle
+book
 newspaperArticle
+report
+bookSection
+thesis
+journalArticle

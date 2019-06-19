@@ -16,8 +16,8 @@ import utilities_part1 as ut
 def hist_pub_year(df):
     plt.figure(figsize=(25,14))
     df.hist(column="Publication Year", bins=50 )
-    plt.xlabel("Publication Year",fontsize=15)
-    plt.ylabel("Frequency",fontsize=15)
+    #plt.xlabel("Publication Year",fontsize=15)
+    #plt.ylabel("Count",fontsize=15)
     
 #Plot the histogram of the publication languages
 def count_plot_lang(df):
