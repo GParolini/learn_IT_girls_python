@@ -157,10 +157,12 @@ def plot_pop_words(file_id):
         my_dict = json.load(json_file)
     df = pd.read_csv(os.path.join("..", "1_data", "full_data.csv"))
     paper_title = df[df['id']==file_id]['Title'].values
-    plt.title('\n'.join(wrap(str(paper_title),80)), fontsize=8)
+    plt.title('\n'.join(wrap(str(paper_title))), fontsize=20)
     plot_dict = {k: my_dict[k] for k in list(my_dict.keys())[:5]}
     plt.bar(*zip(*plot_dict.items()))
     plt.figure(figsize=(14,8))
+    plt.xticks(fontsize=20)
+    plt.yticks(fontsize=20)
     plt.close()
     my_file_ext_p = file_id + ".pdf"
     plt.savefig(os.path.join("..", "4_plots", "part2", "a", my_file_ext_p))
@@ -357,7 +359,7 @@ def print_txt_printouts (to_be_printed, filename):
 
 #For a given word, get the count of that word in each category. The result is returned as a dictionary with categories as keys and counts as values. There is an added dictionary entry {"Total" : total_count}. The result is printed in a json file
 def get_counts_lemma(my_word):
-    with open(os.path.join("..", "3_printouts", "part2", "global_dict_with_counts.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", "global_dict_with_counts.json")) as json_file:  
         big_dict = json.load(json_file)
     tot = {}
     for key in big_dict.keys():
@@ -453,15 +455,16 @@ def plot_freq_lemmas_title(num):
     my_dict = get_freq_lemmas(num)
     plot_list = my_dict.items()
     x, y = zip(*plot_list)
-    plt.figure(figsize=(14,20))
+    plt.figure(figsize=(10,6))
     plt.barh(x, y)
+    plt.tick_params(labelsize=14)
     my_file_ext_p = str(num) + "_frequent_lemmas_all_cat" + ".pdf"
     plt.savefig(os.path.join("..", "4_plots", "part2", "c", my_file_ext_p))
 
 
 #Get the most frequent words (i.e. the first my_num words) in titles for a specific category
 def get_freq_lemmas_title_cat(my_cat, my_num):
-    with open(os.path.join("..", "3_printouts", "part2", "global_dict_with_counts.json")) as json_file:  
+    with open(os.path.join("..", "3_printouts", "part2", "b", "global_dict_with_counts.json")) as json_file:  
         big_dict = json.load(json_file)
     word_list_cat = []
     for any_word in big_dict[my_cat]:
@@ -490,8 +493,9 @@ def plot_freq_lemmas_title_cat(my_cat, my_num):
     my_dict = get_freq_lemmas_title_cat(my_cat, my_num)
     plot_list = my_dict.items()
     x, y = zip(*plot_list)
-    plt.figure(figsize=(14,20))
-    plt.barh(x, y)
+    plt.figure(figsize=(10,6))
+    plt.barh(x,y)
+    plt.tick_params(labelsize=14)
     my_file_ext_p = str(my_num) + "_frequent_lemmas_" + my_cat+ ".pdf"
     plt.savefig(os.path.join("..", "4_plots", "part2", "c", my_file_ext_p))
 
